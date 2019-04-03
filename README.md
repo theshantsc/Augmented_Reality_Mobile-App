@@ -3,8 +3,8 @@ Augmented Reality Game
 
 Commits 
 ----
-Initial Commit  Kanchana Gunathilaka  19/03/19
-Secon Commit   Technical Research Demo App 03/04/19
+Initial Commit  Kanchana Gunathilaka  19/03/19,
+Second Commit   Technical Research Demo App 03/04/19
 
 How to use Git 
 ----
