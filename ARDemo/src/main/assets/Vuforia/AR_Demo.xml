@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="king" size="0.050000 0.070000" />
+    <ImageTarget name="bootle_2" size="0.200000 0.200000" />
+    <ImageTarget name="bottle" size="2.000000 2.000000" />
+    <CylinderTarget name="bottole_4" sideLength="0.054000"/>
+    <CylinderTarget name="bottle_3" sideLength="0.050000"/>
+  </Tracking>
+</QCARConfig>
