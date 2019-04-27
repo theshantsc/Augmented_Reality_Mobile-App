@@ -152,7 +152,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.softwareChasers.catchme
+    Android: com.softwareChasers.catchMe
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 19
@@ -743,12 +743,13 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 3
-  cloudProjectId: c220a7d9-f293-484c-b4d4-c8f0f91a993e
-  projectName: InstantTracking
-  organizationId: hirunapallage
+  cloudProjectId: 99075d62-0a6d-48e3-8c39-a6b459a18afb
+  projectName: Catchme (1)
+  organizationId: mdksankalpa
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
