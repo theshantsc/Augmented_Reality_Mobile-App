@@ -606,7 +606,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &604148002
@@ -670,12 +670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deec479a7a87e5e438345549c846a0da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  emailText: {fileID: 0}
-  passwordText: {fileID: 0}
-  email: 
-  userId: 
 --- !u!4 &703809135
 Transform:
   m_ObjectHideFlags: 0
@@ -1515,7 +1509,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1764143492
