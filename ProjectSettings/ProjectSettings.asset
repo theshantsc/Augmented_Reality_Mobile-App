@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 07036d36c75d09648a0272f04c41ae58
+  productGUID: b5b5703af2a10d0448873b3676cb20a4
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: SoftwareChasers
-  productName: Catchme
+  productName: CatchMe
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -152,10 +152,25 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.softwareChasers.catchMe
+    Android: "Skip to main content Project Overview Develop Authentication, Database,
+      Storage, Hosting, Functions, ML Kit  Authentication Database Storage Hosting
+      Functions ML Kit Quality Crashlytics, Performance, Test Lab  Analytics Dashboard,
+      Events, Conversions, Audiences, Funnels, User Properties, Latest Release, Retention,
+      StreamView, DebugView  Grow Predictions, A/B Testing, Cloud Messaging, In-App
+      Messaging, Remote Config, Dynamic Links, AdMob  Spark Free $0/month softchasers-catch-me
+      Go to docs softchasers-catch-me Develop Realtime Database Store and sync app
+      data in milliseconds Auth Auth Authenticate and manage users Cloud Firestore
+      Cloud Firestore The next generation of the Realtime Database See all Develop
+      features Keep tabs on your app\u2019s quality Crashlytics Crashlytics Prioritize
+      and fix stability issues Performance Performance Get insights into your app's
+      performance See all Quality features Grow & engage your audience Cloud Messaging
+      Cloud Messaging Engage the right users at the right time A/B Testing A/B Testing
+      Improve key flows & notifications See all Grow features See all Firebase features
+      \  catccom.softwareChasers.catchMe "
+    Standalone: com.HirunaStudios.ARTest
   buildNumber: {}
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 19
+  AndroidMinSdkVersion: 24
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -246,7 +261,7 @@ PlayerSettings:
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
   AndroidBuildApkPerCpuArchitecture: 0
-  AndroidTVCompatibility: 1
+  AndroidTVCompatibility: 0
   AndroidIsGame: 1
   AndroidEnableTango: 0
   androidEnableBanner: 1
@@ -369,10 +384,10 @@ PlayerSettings:
     m_DynamicBatching: 0
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: AndroidPlayer
-    m_APIs: 0b00000008000000
+    m_APIs: 0b00000015000000
     m_Automatic: 1
   - m_BuildTarget: iOSSupport
-    m_APIs: 1000000008000000
+    m_APIs: 10000000
     m_Automatic: 1
   - m_BuildTarget: AppleTVSupport
     m_APIs: 10000000
@@ -380,21 +395,20 @@ PlayerSettings:
   - m_BuildTarget: WebGLSupport
     m_APIs: 0b000000
     m_Automatic: 1
-  - m_BuildTarget: MetroSupport
-    m_APIs: 02000000
-    m_Automatic: 0
   m_BuildTargetVRSettings:
   - m_BuildTarget: Standalone
     m_Enabled: 0
     m_Devices:
     - Oculus
     - OpenVR
-  m_BuildTargetEnableVuforiaSettings: []
+  m_BuildTargetEnableVuforiaSettings:
+  - m_BuildTarget: Android
+    m_Enabled: 0
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   m_TemplateCustomTags: {}
   mobileMTRendering:
-    Android: 1
+    Android: 0
     iPhone: 1
     tvOS: 1
   m_BuildTargetGroupLightmapEncodingQuality: []
@@ -672,9 +686,8 @@ PlayerSettings:
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0
   additionalIl2CppArgs: 
-  scriptingRuntimeVersion: 1
-  apiCompatibilityLevelPerPlatform:
-    Android: 3
+  scriptingRuntimeVersion: 0
+  apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Template_3D
@@ -743,12 +756,11 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
-    Collab: 1
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 3
-  cloudProjectId: 99075d62-0a6d-48e3-8c39-a6b459a18afb
-  projectName: Catchme (1)
+  apiCompatibilityLevel: 2
+  cloudProjectId: 25c0c50e-9b66-41c2-b2a7-abbfc597c696
+  projectName: ARDemo (1)
   organizationId: mdksankalpa
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
