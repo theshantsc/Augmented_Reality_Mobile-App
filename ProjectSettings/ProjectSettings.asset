@@ -152,21 +152,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: "Skip to main content Project Overview Develop Authentication, Database,
-      Storage, Hosting, Functions, ML Kit  Authentication Database Storage Hosting
-      Functions ML Kit Quality Crashlytics, Performance, Test Lab  Analytics Dashboard,
-      Events, Conversions, Audiences, Funnels, User Properties, Latest Release, Retention,
-      StreamView, DebugView  Grow Predictions, A/B Testing, Cloud Messaging, In-App
-      Messaging, Remote Config, Dynamic Links, AdMob  Spark Free $0/month softchasers-catch-me
-      Go to docs softchasers-catch-me Develop Realtime Database Store and sync app
-      data in milliseconds Auth Auth Authenticate and manage users Cloud Firestore
-      Cloud Firestore The next generation of the Realtime Database See all Develop
-      features Keep tabs on your app\u2019s quality Crashlytics Crashlytics Prioritize
-      and fix stability issues Performance Performance Get insights into your app's
-      performance See all Quality features Grow & engage your audience Cloud Messaging
-      Cloud Messaging Engage the right users at the right time A/B Testing A/B Testing
-      Improve key flows & notifications See all Grow features See all Firebase features
-      \  catccom.softwareChasers.catchMe "
+    Android: com.softwareChasers.catchMe
     Standalone: com.HirunaStudios.ARTest
   buildNumber: {}
   AndroidBundleVersionCode: 1
@@ -687,7 +673,8 @@ PlayerSettings:
   allowUnsafeCode: 0
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 0
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    Android: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Template_3D
