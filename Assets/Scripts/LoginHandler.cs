@@ -223,6 +223,7 @@ public class LoginHandler : MonoBehaviour {
   void HandleUpdateUserProfile(Task authTask) {
     if (LogTaskCompletion(authTask, "User profile")) {
       DisplayDetailedUserInfo(auth.CurrentUser, 1);
+      SceneManager.LoadSceneAsync("SampleScene");
     }
   }
 
@@ -234,7 +235,7 @@ public class LoginHandler : MonoBehaviour {
 
   void HandleSigninResult(Task<Firebase.Auth.FirebaseUser> authTask) {
     LogTaskCompletion(authTask, "Sign-in");
-        SceneManager.LoadSceneAsync("scene_01");
+        SceneManager.LoadSceneAsync("SampleScene");
   }
 
   public void ReloadUser() {
