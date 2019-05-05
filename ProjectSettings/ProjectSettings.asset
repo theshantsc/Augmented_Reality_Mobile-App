@@ -746,9 +746,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 2ab78384-5a97-4759-b393-2e86aa5c2a4d
-  projectName: ARDemo
-  organizationId: hirunapallage
+  cloudProjectId: db0b858c-6c94-4541-9b48-e48f8a2112ec
+  projectName: ARDemo (3)
+  organizationId: mdksankalpa
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
