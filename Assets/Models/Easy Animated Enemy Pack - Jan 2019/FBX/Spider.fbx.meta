@@ -135,8 +135,272 @@ ModelImporter:
     7400004: HumanArmature|Spider_Idle
     7400006: HumanArmature|Spider_Jump
     7400008: HumanArmature|Spider_Walk
+    7400010: HumanArmature|Spider_Walk //// HumanArmature
+    7400012: HumanArmature|Spider_Walk //// HumanArmature
+    7400014: HumanArmature|Spider_Walk //// HumanArmature
+    7400016: HumanArmature|Spider_Walk //// HumanArmature
+    7400018: HumanArmature|Spider_Walk //// HumanArmature
+    7400020: HumanArmature|Spider_Walk //// Root
+    7400022: HumanArmature|Spider_Walk //// Body
+    7400024: HumanArmature|Spider_Walk //// FrontLeg.L
+    7400026: HumanArmature|Spider_Walk //// FrontLeg2.L
+    7400028: HumanArmature|Spider_Walk //// FrontLeg3.L
+    7400030: HumanArmature|Spider_Walk //// MidFrontLeg.L
+    7400032: HumanArmature|Spider_Walk //// MidFrontLeg2.L
+    7400034: HumanArmature|Spider_Walk //// MidFrontLeg3.L
+    7400036: HumanArmature|Spider_Walk //// BackLeg.L
+    7400038: HumanArmature|Spider_Walk //// BackLeg2.L
+    7400040: HumanArmature|Spider_Walk //// BackLeg3.L
+    7400042: HumanArmature|Spider_Walk //// MidBackLeg.L
+    7400044: HumanArmature|Spider_Walk //// MidBackLeg2.L
+    7400046: HumanArmature|Spider_Walk //// MidBackLeg3.L
+    7400048: HumanArmature|Spider_Walk //// FrontLeg.R
+    7400050: HumanArmature|Spider_Walk //// FrontLeg2.R
+    7400052: HumanArmature|Spider_Walk //// FrontLeg3.R
+    7400054: HumanArmature|Spider_Walk //// MidFrontLeg.R
+    7400056: HumanArmature|Spider_Walk //// MidFrontLeg2.R
+    7400058: HumanArmature|Spider_Walk //// MidFrontLeg3.R
+    7400060: HumanArmature|Spider_Walk //// BackLeg.R
+    7400062: HumanArmature|Spider_Walk //// BackLeg2.R
+    7400064: HumanArmature|Spider_Walk //// BackLeg3.R
+    7400066: HumanArmature|Spider_Walk //// MidBackLeg.R
+    7400068: HumanArmature|Spider_Walk //// MidBackLeg2.R
+    7400070: HumanArmature|Spider_Walk //// MidBackLeg3.R
+    7400072: HumanArmature|Spider_Walk //// Abdomen
+    7400074: HumanArmature|Spider_Walk //// Thorax
+    7400076: HumanArmature|Spider_Walk //// Head
+    7400078: HumanArmature|Spider_Walk //// PoleTarget.L
+    7400080: HumanArmature|Spider_Walk //// FrontFoot.L
+    7400082: HumanArmature|Spider_Walk //// MidFrontFoot.L
+    7400084: HumanArmature|Spider_Walk //// BackFoot.L
+    7400086: HumanArmature|Spider_Walk //// MidBackFoot.L
+    7400088: HumanArmature|Spider_Walk //// PoleTarget.R
+    7400090: HumanArmature|Spider_Walk //// FrontFoot2.R
+    7400092: HumanArmature|Spider_Walk //// MidFrontFoot.R
+    7400094: HumanArmature|Spider_Walk //// BackFoot.R
+    7400096: HumanArmature|Spider_Walk //// MidBackFoot.R
+    7400098: HumanArmature|Spider_Walk //// Root
+    7400100: HumanArmature|Spider_Walk //// Body
+    7400102: HumanArmature|Spider_Walk //// FrontLeg.L
+    7400104: HumanArmature|Spider_Walk //// FrontLeg2.L
+    7400106: HumanArmature|Spider_Walk //// FrontLeg3.L
+    7400108: HumanArmature|Spider_Walk //// MidFrontLeg.L
+    7400110: HumanArmature|Spider_Walk //// MidFrontLeg2.L
+    7400112: HumanArmature|Spider_Walk //// MidFrontLeg3.L
+    7400114: HumanArmature|Spider_Walk //// BackLeg.L
+    7400116: HumanArmature|Spider_Walk //// BackLeg2.L
+    7400118: HumanArmature|Spider_Walk //// BackLeg3.L
+    7400120: HumanArmature|Spider_Walk //// MidBackLeg.L
+    7400122: HumanArmature|Spider_Walk //// MidBackLeg2.L
+    7400124: HumanArmature|Spider_Walk //// MidBackLeg3.L
+    7400126: HumanArmature|Spider_Walk //// FrontLeg.R
+    7400128: HumanArmature|Spider_Walk //// FrontLeg2.R
+    7400130: HumanArmature|Spider_Walk //// FrontLeg3.R
+    7400132: HumanArmature|Spider_Walk //// MidFrontLeg.R
+    7400134: HumanArmature|Spider_Walk //// MidFrontLeg2.R
+    7400136: HumanArmature|Spider_Walk //// MidFrontLeg3.R
+    7400138: HumanArmature|Spider_Walk //// BackLeg.R
+    7400140: HumanArmature|Spider_Walk //// BackLeg2.R
+    7400142: HumanArmature|Spider_Walk //// BackLeg3.R
+    7400144: HumanArmature|Spider_Walk //// MidBackLeg.R
+    7400146: HumanArmature|Spider_Walk //// MidBackLeg2.R
+    7400148: HumanArmature|Spider_Walk //// MidBackLeg3.R
+    7400150: HumanArmature|Spider_Walk //// Abdomen
+    7400152: HumanArmature|Spider_Walk //// Thorax
+    7400154: HumanArmature|Spider_Walk //// Head
+    7400156: HumanArmature|Spider_Walk //// PoleTarget.L
+    7400158: HumanArmature|Spider_Walk //// FrontFoot.L
+    7400160: HumanArmature|Spider_Walk //// MidFrontFoot.L
+    7400162: HumanArmature|Spider_Walk //// BackFoot.L
+    7400164: HumanArmature|Spider_Walk //// MidBackFoot.L
+    7400166: HumanArmature|Spider_Walk //// PoleTarget.R
+    7400168: HumanArmature|Spider_Walk //// FrontFoot2.R
+    7400170: HumanArmature|Spider_Walk //// MidFrontFoot.R
+    7400172: HumanArmature|Spider_Walk //// BackFoot.R
+    7400174: HumanArmature|Spider_Walk //// MidBackFoot.R
+    7400176: HumanArmature|Spider_Walk //// Root
+    7400178: HumanArmature|Spider_Walk //// Body
+    7400180: HumanArmature|Spider_Walk //// FrontLeg.L
+    7400182: HumanArmature|Spider_Walk //// FrontLeg2.L
+    7400184: HumanArmature|Spider_Walk //// FrontLeg3.L
+    7400186: HumanArmature|Spider_Walk //// MidFrontLeg.L
+    7400188: HumanArmature|Spider_Walk //// MidFrontLeg2.L
+    7400190: HumanArmature|Spider_Walk //// MidFrontLeg3.L
+    7400192: HumanArmature|Spider_Walk //// BackLeg.L
+    7400194: HumanArmature|Spider_Walk //// BackLeg2.L
+    7400196: HumanArmature|Spider_Walk //// BackLeg3.L
+    7400198: HumanArmature|Spider_Walk //// MidBackLeg.L
+    7400200: HumanArmature|Spider_Walk //// MidBackLeg2.L
+    7400202: HumanArmature|Spider_Walk //// MidBackLeg3.L
+    7400204: HumanArmature|Spider_Walk //// FrontLeg.R
+    7400206: HumanArmature|Spider_Walk //// FrontLeg2.R
+    7400208: HumanArmature|Spider_Walk //// FrontLeg3.R
+    7400210: HumanArmature|Spider_Walk //// MidFrontLeg.R
+    7400212: HumanArmature|Spider_Walk //// MidFrontLeg2.R
+    7400214: HumanArmature|Spider_Walk //// MidFrontLeg3.R
+    7400216: HumanArmature|Spider_Walk //// BackLeg.R
+    7400218: HumanArmature|Spider_Walk //// BackLeg2.R
+    7400220: HumanArmature|Spider_Walk //// BackLeg3.R
+    7400222: HumanArmature|Spider_Walk //// MidBackLeg.R
+    7400224: HumanArmature|Spider_Walk //// MidBackLeg2.R
+    7400226: HumanArmature|Spider_Walk //// MidBackLeg3.R
+    7400228: HumanArmature|Spider_Walk //// Abdomen
+    7400230: HumanArmature|Spider_Walk //// Thorax
+    7400232: HumanArmature|Spider_Walk //// Head
+    7400234: HumanArmature|Spider_Walk //// PoleTarget.L
+    7400236: HumanArmature|Spider_Walk //// FrontFoot.L
+    7400238: HumanArmature|Spider_Walk //// MidFrontFoot.L
+    7400240: HumanArmature|Spider_Walk //// BackFoot.L
+    7400242: HumanArmature|Spider_Walk //// MidBackFoot.L
+    7400244: HumanArmature|Spider_Walk //// PoleTarget.R
+    7400246: HumanArmature|Spider_Walk //// FrontFoot2.R
+    7400248: HumanArmature|Spider_Walk //// MidFrontFoot.R
+    7400250: HumanArmature|Spider_Walk //// BackFoot.R
+    7400252: HumanArmature|Spider_Walk //// MidBackFoot.R
+    7400254: HumanArmature|Spider_Walk //// Root
+    7400256: HumanArmature|Spider_Walk //// Body
+    7400258: HumanArmature|Spider_Walk //// FrontLeg.L
+    7400260: HumanArmature|Spider_Walk //// FrontLeg2.L
+    7400262: HumanArmature|Spider_Walk //// FrontLeg3.L
+    7400264: HumanArmature|Spider_Walk //// MidFrontLeg.L
+    7400266: HumanArmature|Spider_Walk //// MidFrontLeg2.L
+    7400268: HumanArmature|Spider_Walk //// MidFrontLeg3.L
+    7400270: HumanArmature|Spider_Walk //// BackLeg.L
+    7400272: HumanArmature|Spider_Walk //// BackLeg2.L
+    7400274: HumanArmature|Spider_Walk //// BackLeg3.L
+    7400276: HumanArmature|Spider_Walk //// MidBackLeg.L
+    7400278: HumanArmature|Spider_Walk //// MidBackLeg2.L
+    7400280: HumanArmature|Spider_Walk //// MidBackLeg3.L
+    7400282: HumanArmature|Spider_Walk //// FrontLeg.R
+    7400284: HumanArmature|Spider_Walk //// FrontLeg2.R
+    7400286: HumanArmature|Spider_Walk //// FrontLeg3.R
+    7400288: HumanArmature|Spider_Walk //// MidFrontLeg.R
+    7400290: HumanArmature|Spider_Walk //// MidFrontLeg2.R
+    7400292: HumanArmature|Spider_Walk //// MidFrontLeg3.R
+    7400294: HumanArmature|Spider_Walk //// BackLeg.R
+    7400296: HumanArmature|Spider_Walk //// BackLeg2.R
+    7400298: HumanArmature|Spider_Walk //// BackLeg3.R
+    7400300: HumanArmature|Spider_Walk //// MidBackLeg.R
+    7400302: HumanArmature|Spider_Walk //// MidBackLeg2.R
+    7400304: HumanArmature|Spider_Walk //// MidBackLeg3.R
+    7400306: HumanArmature|Spider_Walk //// Abdomen
+    7400308: HumanArmature|Spider_Walk //// Thorax
+    7400310: HumanArmature|Spider_Walk //// Head
+    7400312: HumanArmature|Spider_Walk //// PoleTarget.L
+    7400314: HumanArmature|Spider_Walk //// FrontFoot.L
+    7400316: HumanArmature|Spider_Walk //// MidFrontFoot.L
+    7400318: HumanArmature|Spider_Walk //// BackFoot.L
+    7400320: HumanArmature|Spider_Walk //// MidBackFoot.L
+    7400322: HumanArmature|Spider_Walk //// PoleTarget.R
+    7400324: HumanArmature|Spider_Walk //// FrontFoot2.R
+    7400326: HumanArmature|Spider_Walk //// MidFrontFoot.R
+    7400328: HumanArmature|Spider_Walk //// BackFoot.R
+    7400330: HumanArmature|Spider_Walk //// MidBackFoot.R
+    7400332: HumanArmature|Spider_Walk //// Root
+    7400334: HumanArmature|Spider_Walk //// Body
+    7400336: HumanArmature|Spider_Walk //// FrontLeg.L
+    7400338: HumanArmature|Spider_Walk //// FrontLeg2.L
+    7400340: HumanArmature|Spider_Walk //// FrontLeg3.L
+    7400342: HumanArmature|Spider_Walk //// MidFrontLeg.L
+    7400344: HumanArmature|Spider_Walk //// MidFrontLeg2.L
+    7400346: HumanArmature|Spider_Walk //// MidFrontLeg3.L
+    7400348: HumanArmature|Spider_Walk //// BackLeg.L
+    7400350: HumanArmature|Spider_Walk //// BackLeg2.L
+    7400352: HumanArmature|Spider_Walk //// BackLeg3.L
+    7400354: HumanArmature|Spider_Walk //// MidBackLeg.L
+    7400356: HumanArmature|Spider_Walk //// MidBackLeg2.L
+    7400358: HumanArmature|Spider_Walk //// MidBackLeg3.L
+    7400360: HumanArmature|Spider_Walk //// FrontLeg.R
+    7400362: HumanArmature|Spider_Walk //// FrontLeg2.R
+    7400364: HumanArmature|Spider_Walk //// FrontLeg3.R
+    7400366: HumanArmature|Spider_Walk //// MidFrontLeg.R
+    7400368: HumanArmature|Spider_Walk //// MidFrontLeg2.R
+    7400370: HumanArmature|Spider_Walk //// MidFrontLeg3.R
+    7400372: HumanArmature|Spider_Walk //// BackLeg.R
+    7400374: HumanArmature|Spider_Walk //// BackLeg2.R
+    7400376: HumanArmature|Spider_Walk //// BackLeg3.R
+    7400378: HumanArmature|Spider_Walk //// MidBackLeg.R
+    7400380: HumanArmature|Spider_Walk //// MidBackLeg2.R
+    7400382: HumanArmature|Spider_Walk //// MidBackLeg3.R
+    7400384: HumanArmature|Spider_Walk //// Abdomen
+    7400386: HumanArmature|Spider_Walk //// Thorax
+    7400388: HumanArmature|Spider_Walk //// Head
+    7400390: HumanArmature|Spider_Walk //// PoleTarget.L
+    7400392: HumanArmature|Spider_Walk //// FrontFoot.L
+    7400394: HumanArmature|Spider_Walk //// MidFrontFoot.L
+    7400396: HumanArmature|Spider_Walk //// BackFoot.L
+    7400398: HumanArmature|Spider_Walk //// MidBackFoot.L
+    7400400: HumanArmature|Spider_Walk //// PoleTarget.R
+    7400402: HumanArmature|Spider_Walk //// FrontFoot2.R
+    7400404: HumanArmature|Spider_Walk //// MidFrontFoot.R
+    7400406: HumanArmature|Spider_Walk //// BackFoot.R
+    7400408: HumanArmature|Spider_Walk //// MidBackFoot.R
     9500000: //RootNode
+    11100000: //RootNode
+    11100002: Abdomen
+    11100004: Abdomen_end
+    11100006: BackFoot.L
+    11100008: BackFoot.L_end
+    11100010: BackFoot.R
+    11100012: BackFoot.R_end
+    11100014: BackLeg.L
+    11100016: BackLeg.R
+    11100018: BackLeg2.L
+    11100020: BackLeg2.R
+    11100022: BackLeg3.L
+    11100024: BackLeg3.L_end
+    11100026: BackLeg3.R
+    11100028: BackLeg3.R_end
+    11100030: Body
+    11100032: Cube
+    11100034: FrontFoot.L
+    11100036: FrontFoot.L_end
+    11100038: FrontFoot2.R
+    11100040: FrontFoot2.R_end
+    11100042: FrontLeg.L
+    11100044: FrontLeg.R
+    11100046: FrontLeg2.L
+    11100048: FrontLeg2.R
+    11100050: FrontLeg3.L
+    11100052: FrontLeg3.L_end
+    11100054: FrontLeg3.R
+    11100056: FrontLeg3.R_end
+    11100058: Head
+    11100060: Head_end
+    11100062: HumanArmature
+    11100064: MidBackFoot.L
+    11100066: MidBackFoot.L_end
+    11100068: MidBackFoot.R
+    11100070: MidBackFoot.R_end
+    11100072: MidBackLeg.L
+    11100074: MidBackLeg.R
+    11100076: MidBackLeg2.L
+    11100078: MidBackLeg2.R
+    11100080: MidBackLeg3.L
+    11100082: MidBackLeg3.L_end
+    11100084: MidBackLeg3.R
+    11100086: MidBackLeg3.R_end
+    11100088: MidFrontFoot.L
+    11100090: MidFrontFoot.L_end
+    11100092: MidFrontFoot.R
+    11100094: MidFrontFoot.R_end
+    11100096: MidFrontLeg.L
+    11100098: MidFrontLeg.R
+    11100100: MidFrontLeg2.L
+    11100102: MidFrontLeg2.R
+    11100104: MidFrontLeg3.L
+    11100106: MidFrontLeg3.L_end
+    11100108: MidFrontLeg3.R
+    11100110: MidFrontLeg3.R_end
+    11100112: PoleTarget.L
+    11100114: PoleTarget.L_end
+    11100116: PoleTarget.R
+    11100118: PoleTarget.R_end
+    11100120: Root
+    11100122: Thorax
     13700000: Cube
+    13700002: Root
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -164,7 +428,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: HumanArmature|Spider_Walk
+      takeName: HumanArmature|Spider_Walk
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -211,10 +503,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

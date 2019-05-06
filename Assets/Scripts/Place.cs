@@ -12,16 +12,19 @@ public class Place : MonoBehaviour
 {
 
     public GameObject placingObject;
+    public GameObject groundPlacingObject;
     public GameObject placementIndicator;
-    private ARSessionOrigin arSessionOrigin;
-    private Pose placement;
+    private ARSessionOrigin arSessionOrigin; // Allow to interacing with the world around us
+    private Pose placement; // describe position and the rotation of the object that we are placing
     private bool placementPoseIsValid = false;
 
     // Use this for initialization
     void Start()
     {
-        arSessionOrigin = FindObjectOfType<ARSessionOrigin>();
+        arSessionOrigin = FindObjectOfType<ARSessionOrigin>(); //Set reference to the AR session object
         InvokeRepeating("PlaceObjectAR", 3, 3);
+        InvokeRepeating("UpdatePlacementIndicator", 1, 1);
+
 
     }
 
@@ -29,7 +32,7 @@ public class Place : MonoBehaviour
     void Update()
     {
         UpdatePlacementPosition();
-        UpdatePlacementIndicator();
+       // UpdatePlacementIndicator();
         // && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began
         //  if (placementPoseIsValid)
         // {
@@ -41,7 +44,7 @@ public class Place : MonoBehaviour
     {
 
         Vector3 zPos = Camera.current.transform.forward ;
-        zPos.y = 0;
+       // zPos.y = 0;
      //   zPos = Quaternion.AngleAxis(Random.Range(-45, 45), Vector3.up) * zPos;
         Instantiate(placingObject, zPos, Quaternion.identity);
     }
@@ -52,6 +55,8 @@ public class Place : MonoBehaviour
         {
             placementIndicator.SetActive(true);
             placementIndicator.transform.SetPositionAndRotation(placement.position, placement.rotation);
+            Instantiate(groundPlacingObject, placement.position, placement.rotation);
+
         }
         else
         {
@@ -61,7 +66,7 @@ public class Place : MonoBehaviour
 
     private void UpdatePlacementPosition()
     {
-        var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(.5f, .5f));
+        var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(.5f, .5f)); // Finding the center point of the screen
         var hitPlaces = new List<ARRaycastHit>();
         arSessionOrigin.Raycast(screenCenter, hitPlaces, TrackableType.Planes);
 

@@ -524,6 +524,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placingObject: {fileID: 1081961095712970, guid: c674f3e60c81ba34bbd0f312032bfc5c,
     type: 2}
+  groundPlacingObject: {fileID: 1673518188972698, guid: 7d1ca3f5e6a1dd24585882389d62b770,
+    type: 2}
   placementIndicator: {fileID: 1719408964}
 --- !u!4 &1964602099
 Transform:
