@@ -8,10 +8,12 @@
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// WITHOUT WFirebaseARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
+using Firebase;
+using Firebase.Database;
+using Firebase.Unity.Editor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,15 +22,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class LoginHandler : MonoBehaviour {
 
   protected Firebase.Auth.FirebaseAuth auth;
   private Firebase.Auth.FirebaseAuth otherAuth;
   protected Dictionary<string, Firebase.Auth.FirebaseUser> userByAuth =
-    new Dictionary<string, Firebase.Auth.FirebaseUser>();
+  new Dictionary<string, Firebase.Auth.FirebaseUser>();
   private string logText = "";
-    public Text emailText;
-    public Text passwordText;
+  public Text emailText;
+  public Text passwordText;
+  public Text userNameText;
   protected string email = "";
   protected string password = "";
   protected string displayName = "";
@@ -36,6 +40,8 @@ public class LoginHandler : MonoBehaviour {
 
   const int kMaxLogSize = 16382;
   Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
+
+   	private DatabaseReference playerDbRef;
 
   // When the app starts, check to make sure that we have
   // the required dependencies to use Firebase, and if not,
@@ -60,6 +66,13 @@ public class LoginHandler : MonoBehaviour {
     auth.StateChanged += AuthStateChanged;
     auth.IdTokenChanged += IdTokenChanged;
     AuthStateChanged(this, null);
+
+ FirebaseApp app = FirebaseApp.DefaultInstance;
+    // NOTE: You'll need to replace this url with your Firebase App's database
+    // path in order for the database connection to work correctly in editor.
+    app.SetEditorDatabaseUrl("https://softchasers-catch-me.firebaseio.com/");
+    if (app.Options.DatabaseUrl != null) app.SetEditorDatabaseUrl(app.Options.DatabaseUrl);
+     playerDbRef = FirebaseDatabase.DefaultInstance.RootReference;
   }
 
   // Exit if escape (or back, on mobile) is pressed.
@@ -69,6 +82,7 @@ public class LoginHandler : MonoBehaviour {
     }
         email = emailText.text;
         password = passwordText.text;
+        displayName=userNameText.text;
   }
 
   void OnDestroy() {
@@ -108,15 +122,16 @@ public class LoginHandler : MonoBehaviour {
   // Display a more detailed view of a FirebaseUser.
   void DisplayDetailedUserInfo(Firebase.Auth.FirebaseUser user, int indentLevel) {
     DisplayUserInfo(user, indentLevel);
+     StartCoroutine(writePlayer(user));
     DebugLog("  Anonymous: " + user.IsAnonymous);
     DebugLog("  Email Verified: " + user.IsEmailVerified);
-    var providerDataList = new List<Firebase.Auth.IUserInfo>(user.ProviderData);
+  /* var providerDataList = new List<Firebase.Auth.IUserInfo>(user.ProviderData);
     if (providerDataList.Count > 0) {
       DebugLog("  Provider Data:");
       foreach (var providerData in user.ProviderData) {
         DisplayUserInfo(providerData, indentLevel + 1);
       }
-    }
+    }  */
   }
 
   // Track state changes of the auth object.
@@ -129,7 +144,7 @@ public class LoginHandler : MonoBehaviour {
       if (!signedIn && user != null) {
         DebugLog("Signed out " + user.UserId);
                 //user is logged out, load login screen 
-                //SceneManager.LoadSceneAsync("scene_01");
+                SceneManager.LoadSceneAsync("LoginScene");
       }
       user = senderAuth.CurrentUser;
       userByAuth[senderAuth.App.Name] = user;
@@ -180,6 +195,12 @@ public class LoginHandler : MonoBehaviour {
     return complete;
   }
 
+   public void navigateRegister() {
+      DebugLog(String.Format("Navigate the Register"));
+       SceneManager.LoadScene("UserRegisterScene");
+   }
+
+
   public void CreateUserAsync() {
     DebugLog(String.Format("Attempting to create user {0}...", email));
 
@@ -222,8 +243,9 @@ public class LoginHandler : MonoBehaviour {
 
   void HandleUpdateUserProfile(Task authTask) {
     if (LogTaskCompletion(authTask, "User profile")) {
+     
       DisplayDetailedUserInfo(auth.CurrentUser, 1);
-      SceneManager.LoadSceneAsync("SampleScene");
+      SceneManager.LoadSceneAsync("scene_01");
     }
   }
 
@@ -234,8 +256,19 @@ public class LoginHandler : MonoBehaviour {
   }
 
   void HandleSigninResult(Task<Firebase.Auth.FirebaseUser> authTask) {
-    LogTaskCompletion(authTask, "Sign-in");
-        SceneManager.LoadSceneAsync("SampleScene");
+            if (authTask.IsCanceled) {
+            Debug.LogError("SignInWithCredentialAsync was canceled.");
+            return;
+          }
+          if (authTask.IsFaulted) {
+            Debug.LogError("SignInWithCredentialAsync encountered an error: " + authTask.Exception);
+            return;
+          }
+        LogTaskCompletion(authTask, "Sign-in");
+        Firebase.Auth.FirebaseUser newUser = authTask.Result;
+        Debug.LogFormat("Firebase user created successfully: {0} ({1})",newUser.DisplayName, newUser.UserId);
+         StartCoroutine(updateLastLoginTime(newUser.UserId));
+        SceneManager.LoadSceneAsync("scene_01");
   }
 
   public void ReloadUser() {
@@ -295,4 +328,62 @@ public class LoginHandler : MonoBehaviour {
         }
       });
   }
+
+
+  public class Player
+{
+    public string playername;
+    public string email;
+    public int level = 0;
+    public string userId;
+
+    public Player(string playername, string email, string userId) {
+        this.playername = playername;
+        this.email = email;
+        this.userId = userId;
+    }
+} 
+
+// writing player to the database
+private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
+
+  string userId =userInfo.UserId;
+  string playername =userInfo.DisplayName;
+  string email=userInfo.Email;
+
+    //message.text = "writePlayer";
+    DebugLog(String.Format("Wirting Player at Register User Id '{0}':", userId));
+    DebugLog(String.Format("playername Providers for '{0}':", playername));
+    DebugLog(String.Format("Email Providers for '{0}':", email));
+    Player player = new Player(playername, email,userId);
+    string json = JsonUtility.ToJson(player);
+
+    Debug.Log("original");
+    Debug.Log(json);
+
+    json = json.Substring(0, json.Length-1);
+    Debug.Log("cutted");
+    Debug.Log(json);
+
+     string timestampAdd = @" , ""createdtimestamp"": {"".sv"" : ""timestamp""} } ";
+    Debug.Log("adder");
+    Debug.Log(timestampAdd);
+    json = json + timestampAdd;
+    Debug.Log("added");
+    Debug.Log(json);
+
+    playerDbRef.Child("players").Child(userId).SetRawJsonValueAsync(json);
+
+    yield return null;
+}
+
+private IEnumerator updateLastLoginTime(String userId) {
+  var the_JSON_string="{'.sv' : 'timestamp'}";
+ // var result = JSON.Parse(the_JSON_string);
+     Debug.Log("Created Jason");
+    Debug.Log(the_JSON_string);
+    playerDbRef.Child("players").Child(userId).Child("lastlogintimestamp").SetRawJsonValueAsync(the_JSON_string);
+
+    yield return null;
+}
 }
