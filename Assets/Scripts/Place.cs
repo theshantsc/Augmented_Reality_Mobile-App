@@ -55,7 +55,7 @@ public class Place : MonoBehaviour
         {
             placementIndicator.SetActive(true);
             placementIndicator.transform.SetPositionAndRotation(placement.position, placement.rotation);
-            Instantiate(groundPlacingObject, placement.position, placement.rotation);
+          //  Instantiate(groundPlacingObject, placement.position, placement.rotation);
 
         }
         else

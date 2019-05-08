@@ -260,6 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4770166413217774}
   - component: {fileID: 111553621823706352}
+  - component: {fileID: 65287664548940986}
   m_Layer: 0
   m_Name: FrogPrefab
   m_TagString: Untagged
@@ -911,6 +912,18 @@ Transform:
   m_Father: {fileID: 4057691974196040}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65287664548940986
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1673518188972698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.99, y: 4.95, z: 4.99}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!111 &111553621823706352
 Animation:
   m_ObjectHideFlags: 1
