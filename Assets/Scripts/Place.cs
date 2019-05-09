@@ -43,7 +43,7 @@ public class Place : MonoBehaviour
     private void PlaceObjectAR()
     {
 
-        Vector3 zPos = Camera.current.transform.forward ;
+        Vector3 zPos = Camera.main.transform.forward ;
        // zPos.y = 0;
      //   zPos = Quaternion.AngleAxis(Random.Range(-45, 45), Vector3.up) * zPos;
         Instantiate(placingObject, zPos, Quaternion.identity);
@@ -53,9 +53,11 @@ public class Place : MonoBehaviour
     {
         if (placementPoseIsValid)
         {
-            placementIndicator.SetActive(true);
+            // placementIndicator.SetActive(true);
+            Vector3 zPos = Camera.main.transform.forward;
+
             placementIndicator.transform.SetPositionAndRotation(placement.position, placement.rotation);
-          //  Instantiate(groundPlacingObject, placement.position, placement.rotation);
+            Instantiate(placingObject, placement.position, placement.rotation);
 
         }
         else
@@ -68,7 +70,7 @@ public class Place : MonoBehaviour
     {
         var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(.5f, .5f)); // Finding the center point of the screen
         var hitPlaces = new List<ARRaycastHit>();
-        arSessionOrigin.Raycast(screenCenter, hitPlaces, TrackableType.Planes);
+        arSessionOrigin.Raycast(screenCenter, hitPlaces, TrackableType.FeaturePoint);
 
         placementPoseIsValid = hitPlaces.Count > 0;
 
