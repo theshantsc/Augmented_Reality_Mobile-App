@@ -245,7 +245,7 @@ public class LoginHandler : MonoBehaviour {
     if (LogTaskCompletion(authTask, "User profile")) {
      
       DisplayDetailedUserInfo(auth.CurrentUser, 1);
-      SceneManager.LoadSceneAsync("scene_01");
+      SceneManager.LoadSceneAsync("Menu");
     }
   }
 
@@ -268,7 +268,7 @@ public class LoginHandler : MonoBehaviour {
         Firebase.Auth.FirebaseUser newUser = authTask.Result;
         Debug.LogFormat("Firebase user created successfully: {0} ({1})",newUser.DisplayName, newUser.UserId);
          StartCoroutine(updateLastLoginTime(newUser.UserId));
-        SceneManager.LoadSceneAsync("scene_01");
+        SceneManager.LoadSceneAsync("Menu");
   }
 
   public void ReloadUser() {
@@ -383,7 +383,6 @@ private IEnumerator updateLastLoginTime(String userId) {
      Debug.Log("Created Jason");
     Debug.Log(the_JSON_string);
     playerDbRef.Child("players").Child(userId).Child("lastlogintimestamp").SetRawJsonValueAsync(the_JSON_string);
-
     yield return null;
 }
 }
