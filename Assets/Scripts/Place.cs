@@ -15,8 +15,9 @@ public class Place : MonoBehaviour
     public GameObject groundPlacingObject;
     public GameObject placementIndicator;
     private ARSessionOrigin arSessionOrigin; // Allow to interacing with the world around us
-    private Pose placement; // describe position and the rotation of the object that we are placing
+    public Pose placement; // describe position and the rotation of the object that we are placing
     private bool placementPoseIsValid = false;
+    public Vector3 zPos;
 
     // Use this for initialization
     void Start()
@@ -32,6 +33,7 @@ public class Place : MonoBehaviour
     void Update()
     {
         UpdatePlacementPosition();
+        
        // UpdatePlacementIndicator();
         // && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began
         //  if (placementPoseIsValid)
@@ -43,7 +45,7 @@ public class Place : MonoBehaviour
     private void PlaceObjectAR()
     {
 
-        Vector3 zPos = Camera.main.transform.forward ;
+        zPos = Camera.main.transform.forward ;
        // zPos.y = 0;
      //   zPos = Quaternion.AngleAxis(Random.Range(-45, 45), Vector3.up) * zPos;
         Instantiate(placingObject, zPos, Quaternion.identity);
@@ -53,8 +55,8 @@ public class Place : MonoBehaviour
     {
         if (placementPoseIsValid)
         {
-            // placementIndicator.SetActive(true);
-            Vector3 zPos = Camera.main.transform.forward;
+            placementIndicator.SetActive(true);
+            zPos = Camera.main.transform.forward;
 
             placementIndicator.transform.SetPositionAndRotation(placement.position, placement.rotation);
             Instantiate(placingObject, placement.position, placement.rotation);
