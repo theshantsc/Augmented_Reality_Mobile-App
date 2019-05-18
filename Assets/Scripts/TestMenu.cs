@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartLevel : MonoBehaviour {
+public class TestMenu : MonoBehaviour {
 
     public string levelName;
 
@@ -18,7 +18,7 @@ public class StartLevel : MonoBehaviour {
 		
 	}
 
-    public void DatabaseTest () {
+        public void DatabaseTest () {
         SceneManager.LoadScene("scene_01");
 
     }

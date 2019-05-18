@@ -54,8 +54,8 @@ public class LoginHandler : MonoBehaviour {
   public void Start() {
 
       errorMsg.text="";
-
-    Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+      Debug.Log("Start");
+        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
       dependencyStatus = task.Result;
       if (dependencyStatus == Firebase.DependencyStatus.Available) {
         InitializeFirebase();
@@ -64,24 +64,39 @@ public class LoginHandler : MonoBehaviour {
           "Could not resolve all Firebase dependencies: " + dependencyStatus);
       }
     });
+ 
   }
+
+      void Awake()
+    {
+        Debug.Log("Awake");
+     
+    }
 
 
   // Handle initialization of the necessary firebase modules:
   void InitializeFirebase() {
-    DebugLog("Setting up Firebase Auth");
-    auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
-    auth.StateChanged += AuthStateChanged;
-    auth.IdTokenChanged += IdTokenChanged;
-    AuthStateChanged(this, null);
+    DebugLog("Setting up Firebase Auth Setup");
+  
+        auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+      auth.StateChanged += AuthStateChanged;
+      auth.IdTokenChanged += IdTokenChanged;
+     AuthStateChanged(this, null);
+      DebugLog("Setting up AuthStateChanged Completed");
 
- FirebaseApp app = FirebaseApp.DefaultInstance;
+     FirebaseApp app = FirebaseApp.DefaultInstance;
     // NOTE: You'll need to replace this url with your Firebase App's database
     // path in order for the database connection to work correctly in editor.
-    app.SetEditorDatabaseUrl("https://softchasers-catch-me.firebaseio.com/");
-    if (app.Options.DatabaseUrl != null) app.SetEditorDatabaseUrl(app.Options.DatabaseUrl);
-     playerDbRef = FirebaseDatabase.DefaultInstance.RootReference;
-     playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
+   DebugLog("Setting up Firebase Datbase Setup");
+    if (app.Options.DatabaseUrl != null) {
+     app.SetEditorDatabaseUrl("https://softchasers-catch-me.firebaseio.com/");
+    }app.SetEditorDatabaseUrl(app.Options.DatabaseUrl);
+   
+    // playerReadRef.Child("eUP6BxLhsbXptwjTXUVyeksZZuj1").Child("lastlogintimestamp").SetValueAsync ("test");
+      DebugLog("Setting up Firebase Datbase setup Completed");
+
+
+
   }
 
   // Exit if escape (or back, on mobile) is pressed.
@@ -131,7 +146,7 @@ public class LoginHandler : MonoBehaviour {
   // Display a more detailed view of a FirebaseUser.
   void DisplayDetailedUserInfo(Firebase.Auth.FirebaseUser user, int indentLevel) {
     DisplayUserInfo(user, indentLevel);
-     StartCoroutine(writePlayer(user));
+    // StartCoroutine(writePlayer(user));
     DebugLog("  Anonymous: " + user.IsAnonymous);
     DebugLog("  Email Verified: " + user.IsEmailVerified);
   /* var providerDataList = new List<Firebase.Auth.IUserInfo>(user.ProviderData);
@@ -151,6 +166,7 @@ public class LoginHandler : MonoBehaviour {
     if (senderAuth != null) userByAuth.TryGetValue(senderAuth.App.Name, out user);
       DebugLog("AuthStateChanged senderAuth.CurrentUser " +senderAuth.CurrentUser);
     if (senderAuth == auth && senderAuth.CurrentUser != user) {
+       DebugLog("AuthStateChanged equals! ");
       bool signedIn = user != senderAuth.CurrentUser && senderAuth.CurrentUser != null;
       if (!signedIn && user != null) {
         DebugLog("Signed out " + user.UserId);
@@ -160,7 +176,7 @@ public class LoginHandler : MonoBehaviour {
       user = senderAuth.CurrentUser;
       userByAuth[senderAuth.App.Name] = user;
       if (signedIn) {
-        DebugLog("Signed in " + user.UserId);
+        DebugLog(" AuthStateChanged Signed in " + user.UserId);
         displayName = user.DisplayName ?? "";
         loggedUser=user;
         //DisplayDetailedUserInfo(user, 1);
@@ -260,11 +276,13 @@ public class LoginHandler : MonoBehaviour {
 
   void HandleUpdateUserProfile(Task authTask) {
     if (LogTaskCompletion(authTask, "User profile")) {
+      StartCoroutine(writePlayer(auth.CurrentUser));
+     //writePlayer2(auth.CurrentUser);
       
       DisplayDetailedUserInfo(auth.CurrentUser, 1);
         //loggedUser=auth.CurrentUser;
       SceneManager.LoadSceneAsync("Menu");
-      //SceneManager.LoadSceneAsync("scene_01");
+     // SceneManager.LoadSceneAsync("scene_01");
     }
   }
 
@@ -332,6 +350,7 @@ public class LoginHandler : MonoBehaviour {
     } else {
       DebugLog("Current user info:");
       DisplayDetailedUserInfo(auth.CurrentUser, 1);
+      
     }
   }
 
@@ -394,11 +413,13 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
     json = json + timestampAdd;
     Debug.Log("added");
     Debug.Log(json);
-
+      playerDbRef = FirebaseDatabase.DefaultInstance.RootReference;
+     DebugLog(String.Format("playerDbRef {0}...", playerDbRef));
     playerDbRef.Child("players").Child(userId).SetRawJsonValueAsync(json);
 
     yield return null;
 }
+
 
 private IEnumerator updateLastLoginTime(String userId) {
   string the_JSON_string="{'.sv' : 'timestamp'}";
@@ -406,14 +427,13 @@ private IEnumerator updateLastLoginTime(String userId) {
  // var result = JSON.Parse(the_JSON_string);
   DebugLog(String.Format("updateLastLoginTime {0}...", userId));
     Debug.Log(the_JSON_string);
+     playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
+    DebugLog(String.Format("playerReadRef {0}...", playerReadRef));
     playerReadRef.Child(userId).Child("lastlogintimestamp").SetRawJsonValueAsync(the_JSON_string);
     yield return null;
 }
 
-    void Awake()
-    {
-        Debug.Log("Awake");
-    }
+
 
     // called first
     void OnEnable()
@@ -437,17 +457,19 @@ private IEnumerator updateLastLoginTime(String userId) {
           Debug.Log("GetIntailDbValues User Id : " + UserId);
           // Firebase.Database.FirebaseDatabase dbInstance = Firebase.Database.DefaultInstance;
           //dbInstance.GetReference("players/6WuW7vnr4VOohFg4KlxjG6Fvtth1").GetValueAsync().ContinueWith(task => {
+        playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
+
           playerReadRef.Child(UserId).GetValueAsync().ContinueWith(task => {
                     if (task.IsFaulted) {
                         // Handle the error...
                          Debug.Log("Handle the error task.IsFaulted");
                     }
                     else if (task.IsCompleted) {
-                      Debug.Log("Task Completed");
+                      Debug.Log("Task Completed get User Detail :");
                       DataSnapshot snapshot = task.Result;
                        //Debug.Log("Task Completed:"+snapshot.Child("level").getValue());
                          IDictionary dictUser1 = (IDictionary)snapshot.Value;
-                          Debug.Log ("" + dictUser1["email"] + " - " + dictUser1["level"]);
+                          Debug.Log ("" + dictUser1["email"] + " - " + dictUser1["level"].ToString());
                           loggedUserCurrentLevel=(int)dictUser1["level"];
                           Debug.Log ("loggedUserCurrentLevel" +loggedUserCurrentLevel);
                      /* foreach ( DataSnapshot user in snapshot.Children){
