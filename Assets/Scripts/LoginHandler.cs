@@ -36,7 +36,7 @@ public class LoginHandler : MonoBehaviour {
   public Text errorMsg;
   protected string email = "";
   protected string password = "";
-   public static string displayName = "";
+  public static string displayName = "";
   private bool fetchingToken = false;
   public static  Firebase.Auth.FirebaseUser loggedUser = null; 
    public static  int loggedUserCurrentLevel = 0; 
@@ -174,7 +174,8 @@ public class LoginHandler : MonoBehaviour {
       userByAuth[senderAuth.App.Name] = user;
       if (signedIn) {
         DebugLog(" AuthStateChanged Signed in " + user.UserId);
-        displayName = user.DisplayName ?? "";
+         GetIntailDbValues(user.UserId);
+        //displayName = user.DisplayName ?? "";
         loggedUser=user;
         //DisplayDetailedUserInfo(user, 1);
       }else {
@@ -373,7 +374,7 @@ public class LoginHandler : MonoBehaviour {
 {
     public string playername;
     public string email;
-    public int level = 1;
+    public int achievedlevel = 1;
     public string userId;
 
     public Player(string playername, string email, string userId) {
@@ -447,7 +448,7 @@ private IEnumerator updateLastLoginTime(String userId) {
         if(scene.name.Contains("scene_01")){
           Debug.Log("OnSceneLoaded:  scene_01  loaded" + scene.name);
           Debug.Log("Logged In User Id :" + loggedUser.UserId);
-         GetIntailDbValues(loggedUser.UserId);
+         //GetIntailDbValues(loggedUser.UserId);
         }
     }
        protected virtual void GetIntailDbValues(String UserId) {
@@ -466,9 +467,9 @@ private IEnumerator updateLastLoginTime(String userId) {
                       DataSnapshot snapshot = task.Result;
                        //Debug.Log("Task Completed:"+snapshot.Child("level").getValue());
                          IDictionary dictUser1 = (IDictionary)snapshot.Value;
-                          Debug.Log ("" + dictUser1["email"] + " - " + dictUser1["level"].ToString());
-                            loggedUserCurrentLevel= int.Parse(dictUser1["level"].ToString());
-                             displayName=dictUser1["playername"].ToString();
+                         // Debug.Log ("" + dictUser1["email"] + " - " + dictUser1["achievedlevel"].ToString());
+                            loggedUserCurrentLevel = int.Parse(dictUser1["achievedlevel"].ToString());
+                            displayName=dictUser1["playername"].ToString();
                           Debug.Log ("loggedUserCurrentLevel" +loggedUserCurrentLevel);
                      /* foreach ( DataSnapshot user in snapshot.Children){
                         IDictionary dictUser = (IDictionary)user.Value;
@@ -479,6 +480,11 @@ private IEnumerator updateLastLoginTime(String userId) {
                     }
           });
  }
+
+  public void BackToLogin () {
+        SceneManager.LoadScene("LoginScene");
+
+    }
 
 
 }

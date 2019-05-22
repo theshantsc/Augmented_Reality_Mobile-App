@@ -79,7 +79,7 @@ public class ScoreSaveDemo : MonoBehaviour {
     if(currentplaylevel==1){
       logUserCurrentAchiveLevel =2;
       playerReadRef.Child(loggedUser.UserId).Child("achievedlevel").SetValueAsync(2);
-       playerReadRef.Child(loggedUser.UserId).Child("score").Child("level1").SetValueAsync(scoreval);
+       playerReadRef.Child(loggedUser.UserId).Child("score").Child("level1").SetValueAsync(int.Parse(scoreval));
 
       level2Button.interactable = true;
 
@@ -87,11 +87,11 @@ public class ScoreSaveDemo : MonoBehaviour {
      {
        logUserCurrentAchiveLevel =3;
        playerReadRef.Child(loggedUser.UserId).Child("achievedlevel").SetValueAsync(3);
-          playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").SetValueAsync(scoreval);
+          playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").SetValueAsync(int.Parse(scoreval));
      }else {
           Debug.Log("unexpeteted level");
      }
-       level.text="Currently Achieved Level:"+logUserCurrentAchiveLevel.ToString();
+       level.text=logUserCurrentAchiveLevel.ToString();
     }else {
       errorMsg.text="Score is empty!";
     }
@@ -106,10 +106,10 @@ public class ScoreSaveDemo : MonoBehaviour {
      playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
     Debug.Log(String.Format("playerReadRef {0}...", playerReadRef));
      if(currentplaylevel==1){
-        playerReadRef.Child(loggedUser.UserId).Child("score").Child("level1").SetValueAsync(scoreval);
+        playerReadRef.Child(loggedUser.UserId).Child("score").Child("level1").SetValueAsync(int.Parse(scoreval));
      }else if(currentplaylevel==2)
      {
-          playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").SetValueAsync(scoreval);
+          playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").SetValueAsync(int.Parse(scoreval));
      }else {
           Debug.Log("unexpeteted level");
      }
@@ -131,10 +131,12 @@ public class ScoreSaveDemo : MonoBehaviour {
       errorMsg.text="";
       Debug.Log("Start  Score ");
       loggedUser= LoginHandler.loggedUser;
-      logUserCurrentAchiveLevel=LoginHandler.loggedUserCurrentLevel;
-      displayName=LoginHandler.displayName;
-      level.text="Currently Achieved Level:"+logUserCurrentAchiveLevel.ToString();
-      userName.text="User Name : "+displayName;
+     // logUserCurrentAchiveLevel=LoginHandler.loggedUserCurrentLevel;
+     // displayName=LoginHandler.displayName;
+        GetIntailDbValues(loggedUser.UserId);
+     // level.text=logUserCurrentAchiveLevel.ToString();
+     // userName.text=displayName;
+   
       /*  Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
       dependencyStatus = task.Result;
       if (dependencyStatus == Firebase.DependencyStatus.Available) {
@@ -145,19 +147,13 @@ public class ScoreSaveDemo : MonoBehaviour {
       }
     });  */
       
-  
-
-    if(logUserCurrentAchiveLevel==1){
-         level2Button.interactable = false;
-    }
 
      }
 
      void Awake()
     {
         Debug.Log("Awake Score");
-  
-     
+
     }
 
 
@@ -177,9 +173,48 @@ public class ScoreSaveDemo : MonoBehaviour {
      playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
     Debug.Log(String.Format("playerReadRef {0}...", playerReadRef));
     playerReadRef.Child(loggedUser.UserId).Child("currentplaylevel").SetValueAsync(levelValue);
-    playingLevel.text="playing level:"+levelValue.ToString();
+    playingLevel.text=levelValue.ToString();
     //yield return null;
 }
+
+   protected virtual void GetIntailDbValues(String UserId) {
+          Debug.Log("GetIntailDbValues User Id : " + UserId);
+          // Firebase.Database.FirebaseDatabase dbInstance = Firebase.Database.DefaultInstance;
+          //dbInstance.GetReference("players/6WuW7vnr4VOohFg4KlxjG6Fvtth1").GetValueAsync().ContinueWith(task => {
+        playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
+
+          playerReadRef.Child(UserId).GetValueAsync().ContinueWith(task => {
+                    if (task.IsFaulted) {
+                        // Handle the error...
+                         Debug.Log("Handle the error task.IsFaulted");
+                    }
+                    else if (task.IsCompleted) {
+                      Debug.Log("Task Completed get User Detail :");
+                      DataSnapshot snapshot = task.Result;
+                       //Debug.Log("Task Completed:"+snapshot.Child("level").getValue());
+                         IDictionary dictUser1 = (IDictionary)snapshot.Value;
+                         // Debug.Log ("" + dictUser1["email"] + " - " + dictUser1["achievedlevel"].ToString());
+                            logUserCurrentAchiveLevel = int.Parse(dictUser1["achievedlevel"].ToString());
+                            displayName=dictUser1["playername"].ToString();
+                          Debug.Log ("loggedUserCurrentLevel" +logUserCurrentAchiveLevel);
+                     /* foreach ( DataSnapshot user in snapshot.Children){
+                        IDictionary dictUser = (IDictionary)user.Value;
+                        Debug.Log ("" + dictUser["email"] + " - " + dictUser["userId"]);
+
+  
+                      } */
+                    level.text=logUserCurrentAchiveLevel.ToString();
+                    userName.text=displayName;
+
+                        if(logUserCurrentAchiveLevel==1){
+                                  level2Button.interactable = false;
+                              }
+      
+                    }else {
+                         Debug.Log("Else condtion");
+                    }
+          });
+ }
 
 
 
