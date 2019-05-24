@@ -2983,6 +2983,7 @@ MonoBehaviour:
   lostScreen: {fileID: 989983785}
   levelName: 
   levelPassScore: 50
+  levelToUnlock: 2
 --- !u!82 &1375737375
 AudioSource:
   m_ObjectHideFlags: 0

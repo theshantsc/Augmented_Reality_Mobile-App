@@ -15,6 +15,7 @@ public class Countdown : MonoBehaviour {
     int skySpawnCount = 0;
     int score = 0;
     public int levelPassScore;
+    public int levelToUnlock;
 
 
     // Use this for initialization
@@ -49,6 +50,10 @@ public class Countdown : MonoBehaviour {
 
             if (score >= levelPassScore)
             {
+                if (PlayerPrefs.GetInt("levelReach") < levelToUnlock)
+                {
+                    PlayerPrefs.SetInt("levelReach", levelToUnlock);
+                }
                 winScreen.SetActive(true);
 
             }

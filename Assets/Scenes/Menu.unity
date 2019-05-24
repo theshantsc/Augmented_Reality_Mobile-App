@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 293932882}
   - component: {fileID: 293932881}
   - component: {fileID: 293932880}
+  - component: {fileID: 293932884}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -277,6 +278,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &293932884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 293932879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2ea99fd876cff4ca372098fc59de98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generalMenu:
+  - {fileID: 1065857018}
 --- !u!1 &1016753916
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2b531959b503a4e88b125069734298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Level01
+  levelName: LevelSelection
+  nextLevel: 
 --- !u!114 &1065857018
 MonoBehaviour:
   m_ObjectHideFlags: 0

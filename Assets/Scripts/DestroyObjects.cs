@@ -41,6 +41,7 @@ public class DestroyObjects : MonoBehaviour {
                         Destroy(bc.gameObject);
                         Instantiate(deathEffect, bc.gameObject.transform.position, Quaternion.identity);
                         enemyKillCount += 1;
+
                         PlayerPrefs.SetInt(levelName, enemyKillCount);
 
                         int totalScore = PlayerPrefs.GetInt("Level01") + PlayerPrefs.GetInt("Level02");
