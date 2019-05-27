@@ -4,8 +4,8 @@
   <string name="gcm_defaultSenderId" translatable="false">1022328572535</string>
   <string name="google_storage_bucket" translatable="false">softchasers-catch-me.appspot.com</string>
   <string name="project_id" translatable="false">softchasers-catch-me</string>
-  <string name="google_api_key" translatable="false">AIzaSyAyl2hRgypRc-2Ru2oBhQLk3_ByD8G0ONQ</string>
-  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAyl2hRgypRc-2Ru2oBhQLk3_ByD8G0ONQ</string>
+  <string name="google_api_key" translatable="false">AIzaSyAf2mYKUK3BxQzDBu_LV85dMv0clI10Bo0</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAf2mYKUK3BxQzDBu_LV85dMv0clI10Bo0</string>
   <string name="google_app_id" translatable="false">1:1022328572535:android:cedf834955a02961</string>
-  <string name="default_web_client_id" translatable="false">1022328572535-959e2lb98lgot6kc0mb4c19md40l3ouu.apps.googleusercontent.com</string>
+  <string name="default_web_client_id" translatable="false">1022328572535-8uanl1nmf2e3lcfkmd63mpnlek7p11lu.apps.googleusercontent.com</string>
 </resources>
