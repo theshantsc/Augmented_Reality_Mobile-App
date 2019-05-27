@@ -4,32 +4,54 @@ using UnityEngine;
 
 public class DestroyObjects : MonoBehaviour {
 
-    int enemyKillCount = 0;
-    public GameObject totalScore;
+    public int enemyKillCount = 0;
+    public GameObject Score;
+    public GameObject deathEffect;
+    public string levelName;
+    public GameObject winScore;
+    public GameObject loseScore;
 	// Use this for initialization
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    // Update is called once per frame
+    void Update() {
 
-            if(Physics.Raycast(ray,out hit))
+        GameObject interaction = GameObject.Find("Interaction");
+        Place place = interaction.GetComponent<Place>();
+
+        GameObject camera = GameObject.Find("AR Camera");
+        Countdown count = camera.GetComponent<Countdown>();
+        //Vector3 zPos = Camera.main.transform.forward;
+
+
+        if (count.currentTime > 0) {
+            if (Input.GetMouseButtonDown(0))
             {
-                BoxCollider bc = hit.collider as BoxCollider;
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                if(bc != null)
+                if (Physics.Raycast(ray, out hit))
                 {
-                    Destroy(bc.gameObject);
-                    enemyKillCount += 1;
-                    totalScore.GetComponent<UnityEngine.UI.Text>().text = enemyKillCount.ToString();
+                    BoxCollider bc = hit.collider as BoxCollider;
+
+                    if (bc != null)
+                    {
+                        Destroy(bc.gameObject);
+                        Instantiate(deathEffect, bc.gameObject.transform.position, Quaternion.identity);
+                        enemyKillCount += 1;
+
+                        PlayerPrefs.SetInt(levelName, enemyKillCount);
+
+                        int totalScore = PlayerPrefs.GetInt("Level01") + PlayerPrefs.GetInt("Level02");
+
+                        Score.GetComponent<UnityEngine.UI.Text>().text = enemyKillCount.ToString();
+                        winScore.GetComponent<UnityEngine.UI.Text>().text = totalScore.ToString();
+                        loseScore.GetComponent<UnityEngine.UI.Text>().text = totalScore.ToString();
+                    }
                 }
             }
         }
-	}
+    }
 }

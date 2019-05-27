@@ -13,7 +13,7 @@ public class PlaceARObjects : MonoBehaviour {
     public GameObject placementIndicator;
     private ARSessionOrigin arSessionOrigin;
     private Pose placement;
-    private bool placementPoseIsValid = false;
+    public bool placementPoseIsValid = false;
 
 	// Use this for initialization
 	void Start () { 

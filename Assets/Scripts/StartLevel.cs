@@ -3,23 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartLevel : MonoBehaviour {
+public class StartLevel : MonoBehaviour
+{
 
     public string levelName;
+    public string nextLevel;
+
 
     // Use this for initialization
-    public void LevelStart () {
+    public void LevelStart()
+    {
         SceneManager.LoadScene(levelName);
 
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
-
-    public void DatabaseTest () {
-        SceneManager.LoadScene("scene_01");
-
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(levelName);
     }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void GoToNextLevel()
+    {
+        SceneManager.LoadScene(nextLevel);
+    }
+
 }
