@@ -883,26 +883,26 @@ MonoBehaviour:
   ShadowPos: {x: 0, y: -10}
   AssetSize: 200
   demoSprites:
-  - {fileID: 21300000, guid: 1d144b1c5f8568c44a2a811095863713, type: 3}
-  - {fileID: 21300000, guid: 5ed6082e0081397448807c45ea0875ce, type: 3}
-  - {fileID: 21300000, guid: 7aad88aca4adebf4c8762a46bbff2dd8, type: 3}
-  - {fileID: 21300000, guid: 40d6025be0234b34a80c269e9ab16642, type: 3}
-  - {fileID: 21300000, guid: f61f945571c9266438dd53622f96342e, type: 3}
-  - {fileID: 21300000, guid: e784c12f564c8c64e89f7ae6fe3b5367, type: 3}
-  - {fileID: 21300000, guid: 55dd6ecbfc6877d4397a377aa7f7f8e6, type: 3}
-  - {fileID: 21300000, guid: fdca82919eae5f54c825ac07928ff43e, type: 3}
-  - {fileID: 21300000, guid: 6b5bdf977e1c208418b4e7522c390ae7, type: 3}
-  - {fileID: 21300000, guid: ee1f739cb57d3dc4f89b8abb13ecff31, type: 3}
-  - {fileID: 21300000, guid: 579c2289d85e2964e84302f8ffb3cedd, type: 3}
-  - {fileID: 21300000, guid: c4570a8831883c646b58b407043242f8, type: 3}
-  - {fileID: 21300000, guid: 01c5bc03a4c569e4ea2f88f81933ca35, type: 3}
-  - {fileID: 21300000, guid: ad2a39cdd047b9e48a369fc456f78c73, type: 3}
-  - {fileID: 21300000, guid: d5d85d5daae0d864dbece488c2c01224, type: 3}
-  - {fileID: 21300000, guid: bff6481e94578944fae575a18a2afcc5, type: 3}
-  - {fileID: 21300000, guid: fb722c855cdb10d449aca988608c198e, type: 3}
-  - {fileID: 21300000, guid: a56cca0cf56bc864cb7e648b2b02670b, type: 3}
-  - {fileID: 21300000, guid: 03ce1b99cd23eef4aac14aec28e36730, type: 3}
-  - {fileID: 21300000, guid: 5db312c3db788394c9dd012c7b8c9a73, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1756454648
 Transform:
   m_ObjectHideFlags: 0
@@ -947,7 +947,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1097,7 +1097,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.00000069973703, y: 0.000015258789}
-  m_SizeDelta: {x: 0, y: 10}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2116688837
 MonoBehaviour:

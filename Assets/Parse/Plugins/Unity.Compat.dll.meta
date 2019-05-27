@@ -16,21 +16,24 @@ PluginImporter:
       '': OSXIntel
     second:
       enabled: 1
-      settings:
-        CPU: AnyCPU
+      settings: {}
   - first:
       '': OSXIntel64
     second:
       enabled: 1
-      settings:
-        CPU: AnyCPU
+      settings: {}
   - first:
-      '': Web
+      '': SamsungTV
     second:
       enabled: 1
       settings: {}
   - first:
-      '': WebStreamed
+      '': Tizen
+    second:
+      enabled: 1
+      settings: {}
+  - first:
+      '': WiiU
     second:
       enabled: 1
       settings: {}
@@ -38,12 +41,11 @@ PluginImporter:
       Android: Android
     second:
       enabled: 1
-      settings:
-        CPU: AnyCPU
+      settings: {}
   - first:
       Any: 
     second:
-      enabled: 1
+      enabled: 0
       settings: {}
   - first:
       Editor: Editor
@@ -52,66 +54,81 @@ PluginImporter:
       settings:
         DefaultValueInitialized: true
   - first:
-      Facebook: Win
+      Nintendo 3DS: N3DS
     second:
       enabled: 1
-      settings:
-        CPU: AnyCPU
+      settings: {}
   - first:
-      Facebook: Win64
+      Nintendo Switch: Switch
     second:
       enabled: 1
-      settings:
-        CPU: AnyCPU
+      settings: {}
+  - first:
+      PS4: PS4
+    second:
+      enabled: 1
+      settings: {}
+  - first:
+      PSP2: PSP2
+    second:
+      enabled: 1
+      settings: {}
   - first:
       Standalone: Linux
     second:
       enabled: 1
-      settings:
-        CPU: x86
+      settings: {}
   - first:
       Standalone: Linux64
     second:
       enabled: 1
-      settings:
-        CPU: x86_64
+      settings: {}
   - first:
       Standalone: LinuxUniversal
     second:
       enabled: 1
-      settings:
-        CPU: AnyCPU
+      settings: {}
   - first:
       Standalone: OSXUniversal
     second:
       enabled: 1
-      settings:
-        CPU: AnyCPU
+      settings: {}
   - first:
       Standalone: Win
     second:
       enabled: 1
-      settings:
-        CPU: AnyCPU
+      settings: {}
   - first:
       Standalone: Win64
     second:
       enabled: 1
-      settings:
-        CPU: AnyCPU
+      settings: {}
+  - first:
+      WebGL: WebGL
+    second:
+      enabled: 1
+      settings: {}
   - first:
       Windows Store Apps: WindowsStoreApps
     second:
-      enabled: 1
+      enabled: 0
       settings:
         CPU: AnyCPU
+  - first:
+      XboxOne: XboxOne
+    second:
+      enabled: 1
+      settings: {}
   - first:
       iPhone: iOS
     second:
       enabled: 1
-      settings:
-        CompileFlags: 
-        FrameworkDependencies: 
+      settings: {}
+  - first:
+      tvOS: tvOS
+    second:
+      enabled: 1
+      settings: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

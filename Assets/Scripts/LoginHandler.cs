@@ -13,7 +13,9 @@
 // limitations under the License.
 using Firebase;
 using Firebase.Database;
+using Firebase.Auth;
 using Firebase.Unity.Editor;
+using Google;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,6 +26,13 @@ using UnityEngine.SceneManagement;
 
 
 public class LoginHandler : MonoBehaviour {
+
+      private GoogleSignInConfiguration configuration;
+
+
+    public string webClientId = "1022328572535-8uanl1nmf2e3lcfkmd63mpnlek7p11lu.apps.googleusercontent.com";
+
+ 
 
   protected Firebase.Auth.FirebaseAuth auth;
   private Firebase.Auth.FirebaseAuth otherAuth;
@@ -70,6 +79,8 @@ public class LoginHandler : MonoBehaviour {
       void Awake()
     {
         Debug.Log("Awake");
+        configuration = new GoogleSignInConfiguration { WebClientId = webClientId, RequestEmail = true, RequestIdToken = true };
+       // CheckFirebaseDependencies();
      
     }
 
@@ -94,6 +105,8 @@ public class LoginHandler : MonoBehaviour {
    
     // playerReadRef.Child("eUP6BxLhsbXptwjTXUVyeksZZuj1").Child("lastlogintimestamp").SetValueAsync ("test");
       DebugLog("Setting up Firebase Datbase setup Completed");
+
+           
   }
 
   // Exit if escape (or back, on mobile) is pressed.
@@ -174,7 +187,7 @@ public class LoginHandler : MonoBehaviour {
       userByAuth[senderAuth.App.Name] = user;
       if (signedIn) {
         DebugLog(" AuthStateChanged Signed in " + user.UserId);
-         GetIntailDbValues(user.UserId);
+        // GetIntailDbValues(user.UserId);
         //displayName = user.DisplayName ?? "";
         loggedUser=user;
         //DisplayDetailedUserInfo(user, 1);
@@ -227,10 +240,16 @@ public class LoginHandler : MonoBehaviour {
   }
 
    public void navigateRegister() {
-      DebugLog(String.Format("Navigate the Register"));
+      DebugLog(String.Format("Navigate the UserRegisterScene"));
        SceneManager.LoadScene("UserRegisterScene");
    }
 
+
+
+   public void navigateToEmailLogin() {
+      DebugLog(String.Format("Navigate the LoginScene"));
+       SceneManager.LoadScene("LoginScene");
+   }
 
   public void CreateUserAsync() {
     DebugLog(String.Format("Attempting to create user {0}...", email));
@@ -279,8 +298,8 @@ public class LoginHandler : MonoBehaviour {
       
       DisplayDetailedUserInfo(auth.CurrentUser, 1);
         //loggedUser=auth.CurrentUser;
-      //SceneManager.LoadSceneAsync("Menu");
-     SceneManager.LoadSceneAsync("scene_01");
+      SceneManager.LoadSceneAsync("Menu");
+     //SceneManager.LoadSceneAsync("scene_01");
     }
   }
 
@@ -305,8 +324,8 @@ public class LoginHandler : MonoBehaviour {
         Firebase.Auth.FirebaseUser newUser = authTask.Result;
         Debug.LogFormat("Firebase user login successfully: {0} ({1})",newUser.DisplayName, newUser.UserId);
          StartCoroutine(updateLastLoginTime(newUser.UserId));
-       // SceneManager.LoadSceneAsync("Menu");
-      SceneManager.LoadSceneAsync("scene_01");
+       SceneManager.LoadSceneAsync("Menu");
+     // SceneManager.LoadSceneAsync("scene_01");
         
   }
 
@@ -419,6 +438,42 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
 }
 
 
+ public void SaveNewUserGoogleAuth() {
+
+     string userId =loggedUser.UserId;
+  string playername =loggedUser.DisplayName;
+  string email=loggedUser.Email;
+
+    //message.text = "writePlayer";
+     AddToInformation("SaveNewUserGoogleAuthr User Id '{0}': = " + loggedUser.UserId);
+
+    Player player = new Player(playername, email,userId);
+    string json = JsonUtility.ToJson(player);
+
+    Debug.Log("original");
+    Debug.Log(json);
+
+    json = json.Substring(0, json.Length-1);
+    Debug.Log("cutted");
+    Debug.Log(json);
+
+     string timestampAdd = @" , ""createdtimestamp"": {"".sv"" : ""timestamp""} } ";
+    Debug.Log("adder");
+    Debug.Log(timestampAdd);
+    json = json + timestampAdd;
+    Debug.Log("added");
+    Debug.Log(json);
+      playerDbRef = FirebaseDatabase.DefaultInstance.RootReference;
+     DebugLog(String.Format("playerDbRef {0}...", playerDbRef));
+     AddToInformation("SaveNewUserGoogleAuth End ");
+    playerDbRef.Child("players").Child(userId).SetRawJsonValueAsync(json);
+
+    SceneManager.LoadSceneAsync("Menu");
+     //SceneManager.LoadSceneAsync("scene_01");
+  
+  }
+
+
 private IEnumerator updateLastLoginTime(String userId) {
   string the_JSON_string="{'.sv' : 'timestamp'}";
   //var test="test";
@@ -427,7 +482,9 @@ private IEnumerator updateLastLoginTime(String userId) {
     Debug.Log(the_JSON_string);
      playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
     DebugLog(String.Format("playerReadRef {0}...", playerReadRef));
-    playerReadRef.Child(userId).Child("lastlogintimestamp").SetRawJsonValueAsync(the_JSON_string);
+   // playerReadRef.Child(userId).Child("lastlogintimestamp").SetRawJsonValueAsync(the_JSON_string);
+    playerReadRef.Child(userId).Child("lastlogin").SetValueAsync ("true");
+   
     yield return null;
 }
 
@@ -449,37 +506,48 @@ private IEnumerator updateLastLoginTime(String userId) {
           Debug.Log("OnSceneLoaded:  scene_01  loaded" + scene.name);
           Debug.Log("Logged In User Id :" + loggedUser.UserId);
          //GetIntailDbValues(loggedUser.UserId);
-        }
-    }
-       protected virtual void GetIntailDbValues(String UserId) {
-          Debug.Log("GetIntailDbValues User Id : " + UserId);
-          // Firebase.Database.FirebaseDatabase dbInstance = Firebase.Database.DefaultInstance;
-          //dbInstance.GetReference("players/6WuW7vnr4VOohFg4KlxjG6Fvtth1").GetValueAsync().ContinueWith(task => {
-        playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
 
-          playerReadRef.Child(UserId).GetValueAsync().ContinueWith(task => {
-                    if (task.IsFaulted) {
-                        // Handle the error...
-                         Debug.Log("Handle the error task.IsFaulted");
+          
+
+        }
+
+         if(scene.name.Contains("GoogleAuthUserNameScene")){
+            AddToInformation("Firebase Google user  New User not found in  DB = " + loggedUser.UserId);
+            AddToInformation("Firebase Google user  New User not found in  DB = " + loggedUser.Email);
+         }
+
+
+             if(scene.name.Contains("GoogleAuthScene")){
+              playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
+            /*  playerReadRef.Child("69qdRPc4tOgbfzHcmrNeWICmzdI3").GetValueAsync().ContinueWith(task2 => {
+              if (task2.IsFaulted) {
+                         Debug.Log("User Exist error task.IsFaulted");
+                          AddToInformation("User Exist error task.IsFaulted");
                     }
-                    else if (task.IsCompleted) {
-                      Debug.Log("Task Completed get User Detail :");
-                      DataSnapshot snapshot = task.Result;
-                       //Debug.Log("Task Completed:"+snapshot.Child("level").getValue());
-                         IDictionary dictUser1 = (IDictionary)snapshot.Value;
-                         // Debug.Log ("" + dictUser1["email"] + " - " + dictUser1["achievedlevel"].ToString());
-                            loggedUserCurrentLevel = int.Parse(dictUser1["achievedlevel"].ToString());
-                            displayName=dictUser1["playername"].ToString();
-                          Debug.Log ("loggedUserCurrentLevel" +loggedUserCurrentLevel);
-                     /* foreach ( DataSnapshot user in snapshot.Children){
-                        IDictionary dictUser = (IDictionary)user.Value;
-                        Debug.Log ("" + dictUser["email"] + " - " + dictUser["userId"]);
-                      } */
+                    else if (task2.IsCompleted) {
+                         AddToInformation("User Exist checkTask Completed get User Detail ");
+                       DataSnapshot snapshot = task2.Result;
+                      if(snapshot.Value!=null){
+                          AddToInformation("Firebase Google user  Database Entry Exist = " );
+                         SceneManager.LoadSceneAsync("scene_01");
+                      }
+                      else {
+                            AddToInformation("Firebase Google user  New User not found in  DB = ");
+                          
+                         SceneManager.LoadSceneAsync("GoogleAuthUserNameScene");
+                           
+                      }  
                     }else {
+                        AddToInformation("Else condtion ");
                          Debug.Log("Else condtion");
                     }
-          });
- }
+          }); */
+             }
+        
+
+          
+    }
+    
 
   public void BackToLogin () {
         SceneManager.LoadScene("LoginScene");
@@ -487,7 +555,142 @@ private IEnumerator updateLastLoginTime(String userId) {
     }
 
 
+  public void BackToGoogleSignIn () {
+        SceneManager.LoadScene("GoogleAuthScene");
+
+    }
+
+public void ContinueWithGoogle()
+{
+    if (Application.internetReachability == NetworkReachability.NotReachable)
+    {
+        // Notify player about connectivity 
+        Debug.Log("No Internet");
+    }
+    else
+    {
+        GoogleSignIn.Configuration = configuration;
+        GoogleSignIn.Configuration.UseGameSignIn = false;
+        GoogleSignIn.Configuration.RequestIdToken = true;
+
+        GoogleSignIn.DefaultInstance.SignIn().ContinueWith(OnAuthenticationFinished);
+    }
+}
+
+// G+ auth success function
+internal void OnAuthenticationFinished(Task<GoogleSignInUser> task)
+{
+    if (task.IsFaulted)
+    {
+        using (IEnumerator<System.Exception> enumerator =
+                task.Exception.InnerExceptions.GetEnumerator())
+        {
+            if (enumerator.MoveNext())
+            {
+                GoogleSignIn.SignInException error =
+                        (GoogleSignIn.SignInException)enumerator.Current;
+                Debug.Log("Got Error: " + error.Status + " " + error.Message);
+            }
+            else
+            {
+                Debug.Log("Got Unexpected Exception?!?" + task.Exception);
+            }
+        }
+    }
+    else if (task.IsCanceled)
+    {
+        Debug.Log("Canceled");
+    }
+    else
+    {
+        Debug.Log("Welcome: " + task.Result.UserId + "!");
+          SignInWithGoogleOnFirebase(task.Result.IdToken);
+        //ContinueWithUserDetails(task.Result.DisplayName, task.Result.ImageUrl.ToString(), task.Result.Email);
+        
+    }
+}
+
+
+
+    private void SignInWithGoogleOnFirebase(string idToken)
+    {
+        Credential credential = GoogleAuthProvider.GetCredential(idToken, null);
+ 
+        auth.SignInWithCredentialAsync(credential).ContinueWith(task =>
+        {
+            AggregateException ex = task.Exception;
+            if (ex != null)
+            {
+               AddToInformation("\nError code = ");
+               // if (ex.InnerExceptions[0] is FirebaseException inner && (inner.ErrorCode != 0))
+               //     AddToInformation("\nError code = " + inner.ErrorCode + " Message = " + inner.Message);
+            }
+            else
+            {
+                AddToInformation("Sign In Successful Google.");
+                // SceneManager.LoadSceneAsync("scene_01");
+                Firebase.Auth.FirebaseUser newUser = task.Result;
+                 AddToInformation("Sign In Successful. User Id "+newUser.UserId);
+                playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
+                playerReadRef.Child(newUser.UserId).GetValueAsync().ContinueWith(task2 => {
+              if (task2.IsFaulted) {
+                        // Handle the error...
+                         Debug.Log("User Exist error task.IsFaulted");
+                          AddToInformation("User Exist error task.IsFaulted");
+                            SceneManager.LoadSceneAsync("GoogleAuthUserNameScene");
+                    }
+                    else if (task2.IsCompleted) {
+                         AddToInformation("User Exist checkTask Completed get User Detail ");
+                       DataSnapshot snapshot = task2.Result;
+                      if(snapshot.Value!=null){
+                          AddToInformation("Firebase Google user  Database Entry Exist = " + newUser.UserId);
+                          SceneManager.LoadSceneAsync("Menu");
+                        // SceneManager.LoadSceneAsync("scene_01");
+                      }
+                      else {
+                         AddToInformation("Firebase Google user  New User not found in  DB = " + newUser.UserId);
+                          
+                         SceneManager.LoadSceneAsync("GoogleAuthUserNameScene");
+                           
+                      }  
+                    }else {
+                        AddToInformation("Else condtion ");
+                         Debug.Log("Else condtion");
+                    }
+          });   
+            }
+        });
+    }
+
+  private void AddToInformation(string str) { errorMsg.text += "\n" + str; }
+  
 }
 
 
     
+          /* playerReadRef.Child(newUser.UserId).GetValueAsync().ContinueWith(task => {
+              if (task.IsFaulted) {
+                        // Handle the error...
+                         Debug.Log("User Exist error task.IsFaulted");
+                    }
+                    else if (task.IsCompleted) {
+                      Debug.Log("User Exist checkTask Completed get User Detail :");
+                       DataSnapshot snapshot = task.Result;
+                      if(snapshot.Value!=null){
+                          AddToInformation("Firebase Google user  Database Entry Exist = " + newUser.UserId);
+                          
+                           if (LogTaskCompletion(authTask, "Sign-in")) {
+                              SceneManager.LoadSceneAsync("scene_01");
+                           }
+
+                      }
+                      else {
+                            AddToInformation("Firebase Google user  New User not found in  DB = " + newUser.UserId);
+                              if (LogTaskCompletion(authTask, "New User not found in DB")) {
+                                 SceneManager.LoadSceneAsync("GoogleAuthUserNameScene");
+                           }
+                      }  
+                    }else {
+                         Debug.Log("Else condtion");
+                    }
+          });   */ 
