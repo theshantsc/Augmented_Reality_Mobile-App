@@ -395,11 +395,14 @@ public class LoginHandler : MonoBehaviour {
     public string email;
     public int achievedlevel = 1;
     public string userId;
+     // System.Uri photo_url = user.PhotoUrl;
+        public string profilepicuri;
 
-    public Player(string playername, string email, string userId) {
+    public Player(string playername, string email, string userId,string profilepicuri) {
         this.playername = playername;
         this.email = email;
         this.userId = userId;
+        this.profilepicuri = profilepicuri;
     }
 } 
 
@@ -409,12 +412,13 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
   string userId =userInfo.UserId;
   string playername =userInfo.DisplayName;
   string email=userInfo.Email;
+  string photo_url = userInfo.PhotoUrl.ToString();
 
     //message.text = "writePlayer";
     DebugLog(String.Format("Wirting Player at Register User Id '{0}':", userId));
     DebugLog(String.Format("playername Providers for '{0}':", playername));
     DebugLog(String.Format("Email Providers for '{0}':", email));
-    Player player = new Player(playername, email,userId);
+    Player player = new Player(playername, email,userId,photo_url);
     string json = JsonUtility.ToJson(player);
 
     Debug.Log("original");
@@ -443,11 +447,12 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
      string userId =loggedUser.UserId;
   string playername =loggedUser.DisplayName;
   string email=loggedUser.Email;
+    string photo_url = loggedUser.PhotoUrl.ToString();
 
     //message.text = "writePlayer";
      AddToInformation("SaveNewUserGoogleAuthr User Id '{0}': = " + loggedUser.UserId);
 
-    Player player = new Player(playername, email,userId);
+    Player player = new Player(playername, email,userId,photo_url);
     string json = JsonUtility.ToJson(player);
 
     Debug.Log("original");
