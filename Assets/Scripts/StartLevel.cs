@@ -40,4 +40,9 @@ public class StartLevel : MonoBehaviour
 
     }
 
+    public void QuitApplication()
+    {
+        Application.Quit();
+    }
+
 }
