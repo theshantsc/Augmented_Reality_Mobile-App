@@ -489,7 +489,6 @@ private IEnumerator updateLastLoginTime(String userId) {
     DebugLog(String.Format("playerReadRef {0}...", playerReadRef));
    // playerReadRef.Child(userId).Child("lastlogintimestamp").SetRawJsonValueAsync(the_JSON_string);
     playerReadRef.Child(userId).Child("lastlogin").SetValueAsync (System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
-   
     yield return null;
 }
 
