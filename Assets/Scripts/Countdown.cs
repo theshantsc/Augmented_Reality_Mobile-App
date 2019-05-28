@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Firebase;
+using Firebase.Database;
+using Firebase.Unity.Editor;
 
 
 public class Countdown : MonoBehaviour {
@@ -16,11 +19,21 @@ public class Countdown : MonoBehaviour {
     int score = 0;
     public int levelPassScore;
     public int levelToUnlock;
-
+    
+     protected Firebase.Auth.FirebaseAuth auth;
+    private static Firebase.Auth.FirebaseUser loggedUser = null; 
+	private DatabaseReference playerDbRef;
+    private DatabaseReference playerReadRef;
+    private string displayName = "";
+    private int logUserCurrentAchiveLevel = 1; 
+     private string imageURL = "";
 
     // Use this for initialization
     void Start () {
         currentTime = startingTime;
+        loggedUser= LoginHandler.loggedUser;
+        Debug.Log("Countdonwn Start  loggedUser ");
+         Debug.Log(loggedUser);
     }
 	
 	// Update is called once per frame
@@ -56,6 +69,23 @@ public class Countdown : MonoBehaviour {
                 }
                 winScreen.SetActive(true);
 
+                   playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
+                    Debug.Log(string.Format("playerReadRef {0}...", playerReadRef));
+
+                    if(string.Equals(levelName, "Level01")){
+                    logUserCurrentAchiveLevel =2;
+                    playerReadRef.Child(loggedUser.UserId).Child("achievedlevel").SetValueAsync(2);
+                    playerReadRef.Child(loggedUser.UserId).Child("score").Child("level1").SetValueAsync(score);
+                    }
+                    else if(string.Equals(levelName, "Level02"))
+                    {
+                    logUserCurrentAchiveLevel =3;
+                    playerReadRef.Child(loggedUser.UserId).Child("achievedlevel").SetValueAsync(3);
+                        playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").SetValueAsync(score);
+                    }else {
+                        Debug.Log("unexpeteted level");
+                    }
+
             }
             else
             {
@@ -64,4 +94,7 @@ public class Countdown : MonoBehaviour {
 
         }
     }
+
+
+
 }

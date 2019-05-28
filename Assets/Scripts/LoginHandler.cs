@@ -412,7 +412,7 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
   string userId =userInfo.UserId;
   string playername =userInfo.DisplayName;
   string email=userInfo.Email;
-  string photo_url = userInfo.PhotoUrl.ToString();
+  string photo_url="https://firebasestorage.googleapis.com/v0/b/softchasers-catch-me.appspot.com/o/avata.png?alt=media&token=33f08ed1-3154-49f8-892d-dfb1da8ccdce";
 
     //message.text = "writePlayer";
     DebugLog(String.Format("Wirting Player at Register User Id '{0}':", userId));
@@ -480,15 +480,15 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
 
 
 private IEnumerator updateLastLoginTime(String userId) {
-  string the_JSON_string="{'.sv' : 'timestamp'}";
+  //string the_JSON_string="{'.sv' : 'timestamp'}";
   //var test="test";
  // var result = JSON.Parse(the_JSON_string);
   DebugLog(String.Format("updateLastLoginTime {0}...", userId));
-    Debug.Log(the_JSON_string);
+  ///  Debug.Log(the_JSON_string);
      playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
     DebugLog(String.Format("playerReadRef {0}...", playerReadRef));
    // playerReadRef.Child(userId).Child("lastlogintimestamp").SetRawJsonValueAsync(the_JSON_string);
-    playerReadRef.Child(userId).Child("lastlogin").SetValueAsync ("true");
+    playerReadRef.Child(userId).Child("lastlogin").SetValueAsync (System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
    
     yield return null;
 }
@@ -649,6 +649,7 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task)
                        DataSnapshot snapshot = task2.Result;
                       if(snapshot.Value!=null){
                           AddToInformation("Firebase Google user  Database Entry Exist = " + newUser.UserId);
+                           StartCoroutine(updateLastLoginTime(newUser.UserId));
                           SceneManager.LoadSceneAsync("Menu");
                         // SceneManager.LoadSceneAsync("scene_01");
                       }
