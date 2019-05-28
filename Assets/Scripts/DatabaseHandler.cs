@@ -178,6 +178,14 @@ public class DatabaseHandler : MonoBehaviour {
         return TransactionResult.Success(mutableData);
   }
 
+
+
+
+
+
+
+
+
   public void AddScore() {
         name = nameText.text;
         score = Int32.Parse(scoreText.text);
@@ -188,6 +196,11 @@ public class DatabaseHandler : MonoBehaviour {
     }
     DebugLog(String.Format("Attempting to add score {0} {1}",
       name, score.ToString()));
+              string levelName="Level01";
+           if(levelName=="Level01"){
+                                Debug.Log(string.Format("playerReadRef level01 value save{0}  test..."));
+                     }
+
 
     DatabaseReference reference = FirebaseDatabase.DefaultInstance.GetReference("Leaders");
 
