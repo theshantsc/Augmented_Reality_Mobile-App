@@ -14,22 +14,30 @@ public class StartLevel : MonoBehaviour
     public void LevelStart()
     {
         SceneManager.LoadScene(levelName);
+        Time.timeScale = 1;
+
 
     }
 
     public void RestartLevel()
     {
         SceneManager.LoadScene(levelName);
+        Time.timeScale = 1;
+
     }
 
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 1;
+
     }
 
     public void GoToNextLevel()
     {
         SceneManager.LoadScene(nextLevel);
+        Time.timeScale = 1;
+
     }
 
 }

@@ -10,8 +10,15 @@ public class DestroyObjects : MonoBehaviour {
     public string levelName;
     public GameObject winScore;
     public GameObject loseScore;
-	// Use this for initialization
-	void Start () {
+    public AudioClip hitSound;
+    public AudioSource musicSource;
+    public AudioSource audioSource;
+    public GameObject unmuteBtn;
+    public GameObject muteBtn;
+    public GameObject unmuteMusicBtn;
+    public GameObject muteMusicBtn;
+    // Use this for initialization
+    void Start () {
 		
 	}
 
@@ -38,6 +45,9 @@ public class DestroyObjects : MonoBehaviour {
 
                     if (bc != null)
                     {
+                        musicSource.clip = hitSound;
+                        musicSource.PlayOneShot(hitSound);
+
                         Destroy(bc.gameObject);
                         Instantiate(deathEffect, bc.gameObject.transform.position, Quaternion.identity);
                         enemyKillCount += 1;
@@ -53,5 +63,33 @@ public class DestroyObjects : MonoBehaviour {
                 }
             }
         }
+    }
+
+    public void MuteMusic()
+    {
+        audioSource.mute = !audioSource.mute;
+        muteMusicBtn.SetActive(false);
+        unmuteMusicBtn.SetActive(true);
+    }
+
+    public void UnuteMusic()
+    {
+        audioSource.mute = !audioSource.mute;
+        unmuteMusicBtn.SetActive(false);
+        muteMusicBtn.SetActive(true);
+    }
+
+    public void MuteSounds()
+    {
+        musicSource.mute = !musicSource.mute;
+        muteBtn.SetActive(false);
+        unmuteBtn.SetActive(true);
+    }
+
+    public void UnuteSounds()
+    {
+        musicSource.mute = !musicSource.mute;
+        unmuteBtn.SetActive(false);
+        muteBtn.SetActive(true);
     }
 }

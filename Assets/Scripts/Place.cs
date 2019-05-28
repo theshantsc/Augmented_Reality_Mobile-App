@@ -25,14 +25,17 @@ public class Place : MonoBehaviour
     public int skySpawnCount = 0;
     float strength = .5f;
     public GameObject[] animals;
+   // public GameObject distance;
+    public float spawnTime;
     public float dissapearTime;
+
 
     // Use this for initialization
     void Start()
     {
         arSessionOrigin = FindObjectOfType<ARSessionOrigin>(); //Set reference to the AR session object
         InvokeRepeating("UpdatePlacementIndicator", 1, 1);
-        InvokeRepeating("PlaceObjectAR", 0.5f, 0.5f);
+        InvokeRepeating("PlaceObjectAR", spawnTime, spawnTime);
         camera = Camera.current.transform;
 
 
@@ -55,13 +58,28 @@ public class Place : MonoBehaviour
     {
         if (skyPlacementPoseIsValid)
         {
-            index = Random.Range(0, animals.Length);
-            skySpawnCount += 1;
-            Vector3 offset = new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f));
+             GameObject gObject;
+             List<Vector3> listOfSpawnPosition = new List<Vector3>();
 
-           // placementIndicator.transform.SetPositionAndRotation(placementSky.position, placementSky.rotation);
-            GameObject gObject = Instantiate(animals[index], placementSky.position + offset, Quaternion.Euler(0, Random.Range(-90, -89), 0));
-            Destroy(gObject, dissapearTime);
+            if (!listOfSpawnPosition.Contains(placementSky.position))
+            {
+
+                index = Random.Range(0, animals.Length);
+                skySpawnCount += 1;
+                Vector3 offset = new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(-0.3f, 0.3f));
+                Vector3 finalPosition = placementSky.position + offset;
+                Vector3 distanceVec = finalPosition - Camera.current.transform.position;
+              //  distance.GetComponent<Text>().text = distanceVec.ToString("F4");
+                // placementIndicator.transform.SetPositionAndRotation(placementSky.position, placementSky.rotation);
+                gObject = Instantiate(animals[index], finalPosition + offset, Quaternion.Euler(0, Random.Range(-360, 360), 0));
+                listOfSpawnPosition.Add(finalPosition);
+                Destroy(gObject, dissapearTime);
+            }
+            else
+            {
+                PlaceObjectAR();
+
+            }
         }
         else
         {
@@ -89,7 +107,7 @@ public class Place : MonoBehaviour
     {
 
 
-        var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(.5f, .5f)); // Finding the center point of the screen
+        var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f)); // Finding the center point of the screen
         var hitPlacesGround = new List<ARRaycastHit>();
         var hitPlacesSky = new List<ARRaycastHit>();
 
