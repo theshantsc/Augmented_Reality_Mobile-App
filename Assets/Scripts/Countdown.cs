@@ -68,9 +68,9 @@ public class Countdown : MonoBehaviour {
                     PlayerPrefs.SetInt("levelReach", levelToUnlock);
                 }
              
-                     Debug.Log("CountDown win levelName :");
+                     Debug.Log("CountDown win levelName :"+levelName);
                         Debug.Log(levelName);
-                      Debug.Log("CountDown win loggedUser ");
+                      Debug.Log("CountDown win loggedUser "+loggedUser);
                      Debug.Log(loggedUser);
 
                    playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
@@ -95,9 +95,9 @@ public class Countdown : MonoBehaviour {
             }
             else
             {
-                        Debug.Log("CountDown lost levelName :");
+                        Debug.Log("CountDown lost levelName :"+levelName);
                         Debug.Log(levelName);
-                      Debug.Log("CountDown lost loggedUser ");
+                      Debug.Log("CountDown lost loggedUser "+loggedUser);
                      Debug.Log(loggedUser);
 
                         playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
