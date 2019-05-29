@@ -148,7 +148,6 @@ public class LoginHandler : MonoBehaviour {
       {"Provider ID", userInfo.ProviderId},
       {"User ID", userInfo.UserId}
     };
-        PlayerPrefs.SetString("username", userInfo.DisplayName);
 
         foreach (var property in userProperties) {
       if (!String.IsNullOrEmpty(property.Value)) {
@@ -417,7 +416,7 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
   string userId =userInfo.UserId;
   string playername =userInfo.DisplayName;
   string email=userInfo.Email;
-  string photo_url="https://firebasestorage.googleapis.com/v0/b/softchasers-catch-me.appspot.com/o/avata.png?alt=media&token=33f08ed1-3154-49f8-892d-dfb1da8ccdce";
+  string photo_url= WWW.UnEscapeURL("https://firebasestorage.googleapis.com/v0/b/softchasers-catch-me.appspot.com/o/avata.png?alt=media&token=33f08ed1-3154-49f8-892d-dfb1da8ccdce");
 
     //message.text = "writePlayer";
     DebugLog(String.Format("Wirting Player at Register User Id '{0}':", userId));
@@ -425,6 +424,10 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
     DebugLog(String.Format("Email Providers for '{0}':", email));
     Player player = new Player(playername, email,userId,photo_url);
     string json = JsonUtility.ToJson(player);
+
+        PlayerPrefs.SetString("urlInfo", photo_url.ToString());
+        PlayerPrefs.SetString("username", playername);
+    
 
     Debug.Log("original");
     Debug.Log(json);
@@ -439,8 +442,8 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
     json = json + timestampAdd;
     Debug.Log("added");
     Debug.Log(json);
-      playerDbRef = FirebaseDatabase.DefaultInstance.RootReference;
-     DebugLog(String.Format("playerDbRef {0}...", playerDbRef));
+    playerDbRef = FirebaseDatabase.DefaultInstance.RootReference;
+    DebugLog(String.Format("playerDbRef {0}...", playerDbRef));
     playerDbRef.Child("players").Child(userId).SetRawJsonValueAsync(json);
 
     yield return null;
@@ -449,9 +452,9 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
 
  public void SaveNewUserGoogleAuth() {
 
-     string userId =loggedUser.UserId;
-  string playername =loggedUser.DisplayName;
-  string email=loggedUser.Email;
+    string userId =loggedUser.UserId;
+    string playername =loggedUser.DisplayName;
+    string email=loggedUser.Email;
     string photo_url = loggedUser.PhotoUrl.ToString();
 
     //message.text = "writePlayer";
@@ -459,6 +462,9 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
 
     Player player = new Player(playername, email,userId,photo_url);
     string json = JsonUtility.ToJson(player);
+    PlayerPrefs.SetString("urlInfo", photo_url.ToString());
+    PlayerPrefs.SetString("username", playername);
+
 
     Debug.Log("original");
     Debug.Log(json);

@@ -63,6 +63,8 @@ public class Countdown : MonoBehaviour {
 
             if (score >= levelPassScore)
             {
+                winScreen.SetActive(true);
+
                 if (PlayerPrefs.GetInt("levelReach") < levelToUnlock)
                 {
                     PlayerPrefs.SetInt("levelReach", levelToUnlock);
@@ -91,7 +93,6 @@ public class Countdown : MonoBehaviour {
                     }else {
                         Debug.Log("unexpeteted level");
                     }
-                       winScreen.SetActive(true);
             }
             if (score < levelPassScore)
             
