@@ -13,21 +13,22 @@ public class StartLevel : MonoBehaviour
     public string nextLevel;
 
 
-         protected Firebase.Auth.FirebaseAuth auth;
+    protected Firebase.Auth.FirebaseAuth auth;
     private static Firebase.Auth.FirebaseUser loggedUser = null; 
 	private DatabaseReference playerDbRef;
     private DatabaseReference playerReadRef;
     private string displayName = "";
     private int logUserCurrentAchiveLevel = 1; 
-     private string imageURL = "";
+    private string imageURL = "";
 
 
 
- void Start () {
+    void Start () {
         loggedUser= LoginHandler.loggedUser;
         Debug.Log("start level  Start  loggedUser ");
          Debug.Log(loggedUser);
         GetIntailDbValues(loggedUser.UserId);
+
 
     }
 
@@ -85,8 +86,9 @@ public class StartLevel : MonoBehaviour
                             logUserCurrentAchiveLevel = int.Parse(dictUser1["achievedlevel"].ToString());
                             displayName=dictUser1["playername"].ToString();
                              imageURL=dictUser1["profilepicuri"].ToString();
-                          Debug.Log ("loggedUserCurrentLevel" +logUserCurrentAchiveLevel);
-      
+                  Debug.Log ("loggedUserCurrentLevel" +logUserCurrentAchiveLevel);
+
+     
 
                         //if(logUserCurrentAchiveLevel==1){
                            //       level2Button.interactable = false;

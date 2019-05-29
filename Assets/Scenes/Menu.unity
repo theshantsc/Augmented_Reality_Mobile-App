@@ -607,6 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Scoreboard
   nextLevel: 
+  username: {fileID: 0}
 --- !u!114 &406865555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,7 +706,7 @@ GameObject:
   - component: {fileID: 552091348}
   m_Layer: 5
   m_Name: Username
-  m_TagString: Untagged
+  m_TagString: Username
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1031,7 +1032,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: LevelSelection
-  nextLevel: 
+  nextLevel: Level1
+  username: {fileID: 552091346}
 --- !u!114 &1065857018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,6 +1526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Scoreboard
   nextLevel: 
+  username: {fileID: 0}
 --- !u!114 &1179952265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1623,6 +1626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: 
   nextLevel: 
+  username: {fileID: 0}
 --- !u!1 &1604744748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Scoreboard
   nextLevel: 
+  username: {fileID: 0}
 --- !u!114 &1809273997
 MonoBehaviour:
   m_ObjectHideFlags: 0

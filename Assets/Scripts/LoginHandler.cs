@@ -48,9 +48,11 @@ public class LoginHandler : MonoBehaviour {
   public static string displayName = "";
   private bool fetchingToken = false;
   public static  Firebase.Auth.FirebaseUser loggedUser = null; 
-   public static  int loggedUserCurrentLevel = 0; 
+  public static  int loggedUserCurrentLevel = 0;
+  //public GameObject username;
 
-  const int kMaxLogSize = 16382;
+
+    const int kMaxLogSize = 16382;
   Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
 
    	private DatabaseReference playerDbRef;
@@ -323,13 +325,18 @@ public class LoginHandler : MonoBehaviour {
         LogTaskCompletion(authTask, "Sign-in");
         Firebase.Auth.FirebaseUser newUser = authTask.Result;
         Debug.LogFormat("Firebase user login successfully: {0} ({1})",newUser.DisplayName, newUser.UserId);
-         StartCoroutine(updateLastLoginTime(newUser.UserId));
+        StartCoroutine(updateLastLoginTime(newUser.UserId));
        SceneManager.LoadSceneAsync("Menu");
-     // SceneManager.LoadSceneAsync("scene_01");
-        
-  }
+       GameObject username = GameObject.FindWithTag("Username");
+       username.GetComponent<UnityEngine.UI.Text>().text = newUser.DisplayName;
+        Debug.LogFormat("Username is " + newUser.DisplayName);
 
-  public void ReloadUser() {
+
+        // SceneManager.LoadSceneAsync("scene_01");
+
+    }
+
+    public void ReloadUser() {
     if (auth.CurrentUser == null) {
       DebugLog("Not signed in, unable to reload user.");
       return;
