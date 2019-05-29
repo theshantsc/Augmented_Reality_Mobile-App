@@ -640,6 +640,8 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task)
                 // SceneManager.LoadSceneAsync("scene_01");
                 Firebase.Auth.FirebaseUser newUser = task.Result;
                  AddToInformation("Sign In Successful. User Id "+newUser.UserId);
+                 //set user at login time
+                 loggedUser=newUser;
                 playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
                 playerReadRef.Child(newUser.UserId).GetValueAsync().ContinueWith(task2 => {
               if (task2.IsFaulted) {
