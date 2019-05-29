@@ -72,24 +72,26 @@ public class Countdown : MonoBehaviour {
              
                      Debug.Log("CountDown win levelName :"+levelName);
                         Debug.Log(levelName);
-                      Debug.Log("CountDown win loggedUser "+loggedUser);
-                     Debug.Log(loggedUser);
+                      Debug.Log("CountDown win loggedUser "+loggedUser.UserId);
+                     Debug.Log(loggedUser.UserId);
 
                    playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
-                    Debug.Log(string.Format("playerReadRef {0}...", playerReadRef));
+                  //  Debug.Log(string.Format("playerReadRef {0}...", playerReadRef));
+
+                     playerReadRef.Child(loggedUser.UserId).Child("test").SetValueAsync(4);
 
                     if(levelName.Trim().Equals("Level01")){
                     logUserCurrentAchiveLevel =2;
-                     Debug.Log(string.Format("playerReadRef level01 value save{0}..."));
-                    playerReadRef.Child(loggedUser.UserId).Child("achievedlevel").SetValueAsync(2);
+                     Debug.Log("playerReadRef level01 value save{0}...");
+                   
                     playerReadRef.Child(loggedUser.UserId).Child("score").Child("level1").SetValueAsync(score);
                     }
                     else if(levelName.Trim().Equals("Level02"))
                     {
-                    Debug.Log(string.Format("playerReadRef level02 value save{0}..."));
+                    Debug.Log("playerReadRef level02 value save{0}...");
                     logUserCurrentAchiveLevel =3;
                     playerReadRef.Child(loggedUser.UserId).Child("achievedlevel").SetValueAsync(3);
-                        playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").SetValueAsync(score);
+                    playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").SetValueAsync(score);
                     }else {
                         Debug.Log("unexpeteted level");
                     }
@@ -97,29 +99,33 @@ public class Countdown : MonoBehaviour {
             if (score < levelPassScore)
             
                 {
-                lostScreen.SetActive(true);
+             
+                     
 
-                Debug.Log("CountDown lost levelName :"+levelName);
+                     Debug.Log("CountDown lost levelName :"+levelName);
                      Debug.Log(levelName);
-                     Debug.Log("CountDown lost loggedUser "+loggedUser);
-                     Debug.Log(loggedUser);
+                     Debug.Log("CountDown lost loggedUser "+loggedUser.UserId);
+                     Debug.Log(loggedUser.UserId);
+                   
 
-                        playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
-                    Debug.Log(string.Format("playerReadRef {0}...", playerReadRef));
+                    playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
+
+                    //Debug.Log(string.Format("playerReadRef {0}...", playerReadRef));
+                    playerReadRef.Child(loggedUser.UserId).Child("test").SetValueAsync(3);
 
                     if(levelName.Trim().Equals("Level01")){
-                     Debug.Log(string.Format("playerReadRef level01 lost value save{0}..."));
+                     Debug.Log("playerReadRef level01 lost value save...");
                    
                     playerReadRef.Child(loggedUser.UserId).Child("score").Child("level1").SetValueAsync(score);
                     }
                     else if(levelName.Trim().Equals("Level02"))
                     {
-                    Debug.Log(string.Format("playerReadRef level02 lost value save{0}..."));
-                        playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").SetValueAsync(score);
+                    Debug.Log("playerReadRef level02 lost value save{0}...");
+                    playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").SetValueAsync(score);
                     }else {
                         Debug.Log("unexpeteted level");
                     }
-
+                   lostScreen.SetActive(true);
             }
 
         }
