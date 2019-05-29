@@ -148,7 +148,9 @@ public class LoginHandler : MonoBehaviour {
       {"Provider ID", userInfo.ProviderId},
       {"User ID", userInfo.UserId}
     };
-    foreach (var property in userProperties) {
+        PlayerPrefs.SetString("username", userInfo.DisplayName);
+
+        foreach (var property in userProperties) {
       if (!String.IsNullOrEmpty(property.Value)) {
         DebugLog(String.Format("{0}{1}: {2}", indent, property.Key, property.Value));
       }
@@ -326,12 +328,8 @@ public class LoginHandler : MonoBehaviour {
         Firebase.Auth.FirebaseUser newUser = authTask.Result;
         Debug.LogFormat("Firebase user login successfully: {0} ({1})",newUser.DisplayName, newUser.UserId);
         StartCoroutine(updateLastLoginTime(newUser.UserId));
-       SceneManager.LoadSceneAsync("Menu");
-       GameObject username = GameObject.FindWithTag("Username");
-       username.GetComponent<UnityEngine.UI.Text>().text = newUser.DisplayName;
-        Debug.LogFormat("Username is " + newUser.DisplayName);
-
-
+        PlayerPrefs.SetString("username", newUser.DisplayName);
+        SceneManager.LoadSceneAsync("Menu");
         // SceneManager.LoadSceneAsync("scene_01");
 
     }

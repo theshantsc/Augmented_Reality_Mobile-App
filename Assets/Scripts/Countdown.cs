@@ -93,11 +93,14 @@ public class Countdown : MonoBehaviour {
                     }
                        winScreen.SetActive(true);
             }
-            else
-            {
-                        Debug.Log("CountDown lost levelName :"+levelName);
-                        Debug.Log(levelName);
-                      Debug.Log("CountDown lost loggedUser "+loggedUser);
+            if (score < levelPassScore)
+            
+                {
+                lostScreen.SetActive(true);
+
+                Debug.Log("CountDown lost levelName :"+levelName);
+                     Debug.Log(levelName);
+                     Debug.Log("CountDown lost loggedUser "+loggedUser);
                      Debug.Log(loggedUser);
 
                         playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
@@ -116,7 +119,6 @@ public class Countdown : MonoBehaviour {
                         Debug.Log("unexpeteted level");
                     }
 
-                lostScreen.SetActive(true);
             }
 
         }
