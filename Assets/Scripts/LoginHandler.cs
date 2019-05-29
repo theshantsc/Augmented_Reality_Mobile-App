@@ -327,7 +327,8 @@ public class LoginHandler : MonoBehaviour {
         Firebase.Auth.FirebaseUser newUser = authTask.Result;
         Debug.LogFormat("Firebase user login successfully: {0} ({1})",newUser.DisplayName, newUser.UserId);
         StartCoroutine(updateLastLoginTime(newUser.UserId));
-        PlayerPrefs.SetString("username", newUser.DisplayName);
+         GetIntailDbValues(newUser.UserId);
+      //  PlayerPrefs.SetString("username", newUser.DisplayName);
         SceneManager.LoadSceneAsync("Menu");
         // SceneManager.LoadSceneAsync("scene_01");
 
@@ -425,7 +426,7 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
     Player player = new Player(playername, email,userId,photo_url);
     string json = JsonUtility.ToJson(player);
 
-        PlayerPrefs.SetString("urlInfo", photo_url.ToString());
+        PlayerPrefs.SetString("urlinfo", photo_url.ToString());
         PlayerPrefs.SetString("username", playername);
     
 
@@ -462,7 +463,7 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
 
     Player player = new Player(playername, email,userId,photo_url);
     string json = JsonUtility.ToJson(player);
-    PlayerPrefs.SetString("urlInfo", photo_url.ToString());
+    PlayerPrefs.SetString("urlinfo", photo_url.ToString());
     PlayerPrefs.SetString("username", playername);
 
 
@@ -503,6 +504,33 @@ private IEnumerator updateLastLoginTime(String userId) {
     yield return null;
 }
 
+
+
+
+   protected virtual void GetIntailDbValues(String UserId) {
+          Debug.Log("GetIntailDbValues login User Id : " + UserId);
+        playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
+
+          playerReadRef.Child(UserId).GetValueAsync().ContinueWith(task => {
+                    if (task.IsFaulted) {
+                        // Handle the error...
+                         Debug.Log("Handle login the error task.IsFaulted");
+                    }
+                    else if (task.IsCompleted) {
+                      Debug.Log("Task Completed login get User Detail :");
+                      DataSnapshot snapshot = task.Result;
+                         IDictionary dictUser1 = (IDictionary)snapshot.Value;
+                            displayName=dictUser1["playername"].ToString();
+
+                               PlayerPrefs.SetString("urlinfo", dictUser1["profilepicuri"].ToString());
+                                PlayerPrefs.SetString("username", displayName);
+
+                          Debug.Log ("Image URL" +dictUser1["profilepicuri"].ToString());
+                    }else {
+                         Debug.Log("Else condtion");
+                    }
+          });
+ }
 
 
     // called first
@@ -662,6 +690,7 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task)
                       if(snapshot.Value!=null){
                           AddToInformation("Firebase Google user  Database Entry Exist = " + newUser.UserId);
                            StartCoroutine(updateLastLoginTime(newUser.UserId));
+                           GetIntailDbValues(newUser.UserId);
                           SceneManager.LoadSceneAsync("Menu");
                         // SceneManager.LoadSceneAsync("scene_01");
                       }
