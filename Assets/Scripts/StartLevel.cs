@@ -48,6 +48,7 @@ public class StartLevel : MonoBehaviour
 
     }
 
+
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("Menu");
@@ -73,6 +74,11 @@ public class StartLevel : MonoBehaviour
           Debug.Log("GetIntailDbValues User Id : " + UserId);
 
         playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
+
+            string levelName="Level01";
+           if(levelName.Trim().Equals("Level01")){
+               Debug.Log("playerReadRef level01 value save{0}  test..");
+                     }
 
           playerReadRef.Child(UserId).GetValueAsync().ContinueWith(task => {
                     if (task.IsFaulted) {
