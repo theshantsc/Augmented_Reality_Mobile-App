@@ -23,13 +23,22 @@ public class UsernameAndPic : MonoBehaviour {
         string username1 = PlayerPrefs.GetString("username");
        username.GetComponent<UnityEngine.UI.Text>().text = username1;
 
+
     //    Debug.Log(PlayerPrefs.GetString("url"));
     //    print(PlayerPrefs.GetString("url"));
 
+        Debug.Log(PlayerPrefs.GetString("urlinfo"));
+        print(PlayerPrefs.GetString("urlinfo"));
+
+
     //    string url = PlayerPrefs.GetString("url");
+
 
     //    WWW www = new WWW("https://firebasestorage.googleapis.com/v0/b/softchasers-catch-me.appspot.com/o/avata.png?alt=media&token=33f08ed1-3154-49f8-892d-dfb1da8ccdce");
     //    yield return www;
+       // WWW www = new WWW(url);
+     //   yield return www;
+
 
 
     //    sprites = www.texture;
