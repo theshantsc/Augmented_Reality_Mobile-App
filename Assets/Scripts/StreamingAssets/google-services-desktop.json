@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1022328572535",
+    "firebase_url": "https://softchasers-catch-me.firebaseio.com",
+    "project_id": "softchasers-catch-me",
+    "storage_bucket": "softchasers-catch-me.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022328572535:android:cedf834955a02961",
+        "android_client_info": {
+          "package_name": "com.softwareChasers.catchMe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022328572535-h8ircrpnh5tk4libum261f56illn7f7k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.softwareChasers.catchMe",
+            "certificate_hash": "0af1a1969ed2bc7ca19e0936f6a0827457dc8bd1"
+          }
+        },
+        {
+          "client_id": "1022328572535-8uanl1nmf2e3lcfkmd63mpnlek7p11lu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf2mYKUK3BxQzDBu_LV85dMv0clI10Bo0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022328572535-8uanl1nmf2e3lcfkmd63mpnlek7p11lu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

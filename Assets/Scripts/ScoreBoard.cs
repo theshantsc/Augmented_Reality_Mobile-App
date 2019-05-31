@@ -1,7 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Firebase;
+using Firebase.Database;
+using Firebase.Unity.Editor;
+
+
+
 
 
 public class ScoreBoard : MonoBehaviour {
@@ -10,18 +17,31 @@ public class ScoreBoard : MonoBehaviour {
     public GameObject name;
     public GameObject score;
 
-    //  private List<HighScores> highScores = new List<HighScore>();
+  private static Firebase.Auth.FirebaseUser loggedUser = null; 
+  //private List<HighScore> highScores = new List<HighScore>();
+
+
     public GameObject scorePrefab;
     public Transform scoreParent;
+    
+  	private DatabaseReference playerDbRef;
+    private DatabaseReference playerReadRef;
 
     // Use this for initialization
     void Start () {
-		
+          Debug.Log("Start  Score ");
+        loggedUser= LoginHandler.loggedUser;
+       
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		      //highScores.Sort();
+
+       // foreach(HighScore guy in highScores)
+       // {
+        //  Debug.LogFormat("guy = {0}", guy.name.ToString());
+       // }
 	}
 
     public void SetScore(string rank, string name, string score)
@@ -30,6 +50,7 @@ public class ScoreBoard : MonoBehaviour {
         this.name.GetComponent<Text>().text = name;
         this.score.GetComponent<Text>().text = score;
     }
+
 
     //private void ShowScores()
     //{
