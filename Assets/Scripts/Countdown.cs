@@ -19,6 +19,9 @@ public class Countdown : MonoBehaviour {
     int score = 0;
     public int levelPassScore;
     public int levelToUnlock;
+    public GameObject uiTimer;
+    public GameObject uiLevelPassScore;
+    
     
      protected Firebase.Auth.FirebaseAuth auth;
     private static Firebase.Auth.FirebaseUser loggedUser = null; 
@@ -34,10 +37,13 @@ public class Countdown : MonoBehaviour {
         loggedUser= LoginHandler.loggedUser;
         Debug.Log("Countdonwn Start  loggedUser ");
          Debug.Log(loggedUser);
+
+        uiTimer.GetComponent<UnityEngine.UI.Text>().text = currentTime.ToString();
+        uiLevelPassScore.GetComponent<UnityEngine.UI.Text>().text = levelPassScore.ToString();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 
         GameObject interaction = GameObject.Find("Interaction");
         GameObject arCamera = GameObject.Find("AR Camera");
