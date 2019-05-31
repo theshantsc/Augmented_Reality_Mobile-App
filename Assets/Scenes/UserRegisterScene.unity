@@ -221,8 +221,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: dc6ef96352ef0b14cab1d1db5ce073c7, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -993,6 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edccecf8a320a3940b2c9c1fd659ea26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  webClientId: 1022328572535-8uanl1nmf2e3lcfkmd63mpnlek7p11lu.apps.googleusercontent.com
   emailText: {fileID: 1246518504}
   passwordText: {fileID: 1316088183}
   userNameText: {fileID: 664944929}
@@ -1697,7 +1698,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Register
+  m_Text: '
 
 '
 --- !u!222 &1538107187

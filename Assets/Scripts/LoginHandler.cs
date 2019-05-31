@@ -524,7 +524,7 @@ private IEnumerator updateLastLoginTime(String userId) {
 
                                PlayerPrefs.SetString("urlinfo", dictUser1["profilepicuri"].ToString());
                                 PlayerPrefs.SetString("username", displayName);
-
+                               
                           Debug.Log ("Image URL" +dictUser1["profilepicuri"].ToString());
                     }else {
                          Debug.Log("Else condtion");
@@ -673,7 +673,7 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task)
                 AddToInformation("Sign In Successful Google.");
                 // SceneManager.LoadSceneAsync("scene_01");
                 Firebase.Auth.FirebaseUser newUser = task.Result;
-                 AddToInformation("Sign In Successful. User Id "+newUser.UserId);
+                // AddToInformation("Sign In Successful. User Id "+newUser.UserId);
                  //set user at login time
                  loggedUser=newUser;
                 playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
@@ -681,7 +681,7 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task)
               if (task2.IsFaulted) {
                         // Handle the error...
                          Debug.Log("User Exist error task.IsFaulted");
-                          AddToInformation("User Exist error task.IsFaulted");
+                          AddToInformation("User Not exist ! check Faulted");
                             SceneManager.LoadSceneAsync("GoogleAuthUserNameScene");
                     }
                     else if (task2.IsCompleted) {
@@ -695,7 +695,7 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task)
                         // SceneManager.LoadSceneAsync("scene_01");
                       }
                       else {
-                         AddToInformation("Firebase Google user  New User not found in  DB = " + newUser.UserId);
+                         AddToInformation("The User is new User = " + newUser.UserId);
                           
                          SceneManager.LoadSceneAsync("GoogleAuthUserNameScene");
                            

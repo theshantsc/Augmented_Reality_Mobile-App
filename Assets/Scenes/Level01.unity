@@ -4103,7 +4103,7 @@ MonoBehaviour:
   winScreen: {fileID: 591525149}
   lostScreen: {fileID: 989983785}
   levelName: Level01
-  levelPassScore: 60
+  levelPassScore: 50
   levelToUnlock: 2
 --- !u!82 &1375737375
 AudioSource:

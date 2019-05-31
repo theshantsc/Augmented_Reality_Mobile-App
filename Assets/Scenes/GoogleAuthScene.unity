@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 434436582}
   - component: {fileID: 434436581}
   m_Layer: 5
-  m_Name: Text
+  m_Name: welcomeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,12 +322,12 @@ RectTransform:
   m_Children:
   - {fileID: 1070082173}
   m_Father: {fileID: 1583171911}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696433410
 MonoBehaviour:
@@ -400,8 +400,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 86f07ddd7b094cb4a8d5b0fd474cabd4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -567,7 +567,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Google Sign-In
+  m_Text: 
 --- !u!222 &1070082175
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -605,12 +605,12 @@ RectTransform:
   m_Children:
   - {fileID: 1410416952}
   m_Father: {fileID: 1583171911}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 120, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1209871696
 MonoBehaviour:
@@ -765,7 +765,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Email Login
+  m_Text: 'Guest
 
 
 '
@@ -884,8 +884,8 @@ RectTransform:
   m_Children:
   - {fileID: 434436580}
   - {fileID: 1541307006}
-  - {fileID: 1209871695}
   - {fileID: 696433409}
+  - {fileID: 1209871695}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.8000002}
