@@ -51,7 +51,8 @@ public class StartLevel : MonoBehaviour
 
 
     void Start () {
-        loggedUser= LoginHandler.loggedUser;
+        AudioListener.pause = false;
+        loggedUser = LoginHandler.loggedUser;
         Debug.Log("start level  Start  loggedUser ");
          Debug.Log(loggedUser);
         GetIntailDbValues(loggedUser.UserId);
@@ -79,6 +80,8 @@ public class StartLevel : MonoBehaviour
 
         SceneManager.LoadScene(levelName);
         Time.timeScale = 1;
+        AudioListener.pause = false;
+
 
 
     }
@@ -87,6 +90,8 @@ public class StartLevel : MonoBehaviour
     {
         SceneManager.LoadScene(levelName);
         Time.timeScale = 1;
+        AudioListener.pause = false;
+
 
     }
 
@@ -95,6 +100,8 @@ public class StartLevel : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
         Time.timeScale = 1;
+        AudioListener.pause = false;
+
 
     }
 
@@ -102,6 +109,8 @@ public class StartLevel : MonoBehaviour
     {
         SceneManager.LoadScene(nextLevel);
         Time.timeScale = 1;
+        AudioListener.pause = false;
+
 
     }
 

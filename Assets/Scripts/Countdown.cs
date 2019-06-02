@@ -23,20 +23,20 @@ public class Countdown : MonoBehaviour {
     public GameObject uiLevelPassScore;
     
     
-     protected Firebase.Auth.FirebaseAuth auth;
+    protected Firebase.Auth.FirebaseAuth auth;
     private static Firebase.Auth.FirebaseUser loggedUser = null; 
 	private DatabaseReference playerDbRef;
     private DatabaseReference playerReadRef;
     private string displayName = "";
     private int logUserCurrentAchiveLevel = 1; 
-     private string imageURL = "";
+    private string imageURL = "";
 
     // Use this for initialization
     void Start () {
         currentTime = startingTime;
         loggedUser= LoginHandler.loggedUser;
         Debug.Log("Countdonwn Start  loggedUser ");
-         Debug.Log(loggedUser);
+        Debug.Log(loggedUser);
 
         uiTimer.GetComponent<UnityEngine.UI.Text>().text = currentTime.ToString();
         uiLevelPassScore.GetComponent<UnityEngine.UI.Text>().text = levelPassScore.ToString();

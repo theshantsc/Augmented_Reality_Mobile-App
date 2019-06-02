@@ -29,7 +29,7 @@ public class ScoreBoard : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-          Debug.Log("Start  Score ");
+        Debug.Log("Start  Score ");
         loggedUser= LoginHandler.loggedUser;
        
 	}
