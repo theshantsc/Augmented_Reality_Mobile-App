@@ -56,7 +56,7 @@ public class StartLevel : MonoBehaviour
         Debug.Log("start level  Start  loggedUser ");
          Debug.Log(loggedUser);
         GetIntailDbValues(loggedUser.UserId);
-        GetIntailScoreValues(loggedUser.UserId);
+       // GetIntailScoreValues(loggedUser.UserId);
 
        highScores.Sort();
 
