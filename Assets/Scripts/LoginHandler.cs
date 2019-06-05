@@ -42,7 +42,7 @@ public class LoginHandler : MonoBehaviour {
   public Text userNameText;  // public variables can mapped with controls in UI (eg email text box)
   public Text errorMsg;     // Display error messages
   protected string email = "";
-  protected string password = "";
+ // protected string password = "";
   public static string displayName = "";
 
   public static  Firebase.Auth.FirebaseUser loggedUser = null;  //keep the logged user detial as a sesson
@@ -118,7 +118,7 @@ public class LoginHandler : MonoBehaviour {
     }
     // retrive the value from Inputs in scene to script variables
         email = emailText.text;
-        password = passwordText.text;
+       // password = passwordText.text;
         displayName=userNameText.text;
   }
   
@@ -157,10 +157,11 @@ public void CreateUserAsync() {
     // reset by AuthStateChanged() when the new user is created and signed in.
    
    // CreateUserWithEmailAndPasswordAsync is a defult function given by firebase to create a user based on email and pasword
-    auth.CreateUserWithEmailAndPasswordAsync(email, password)
+    auth.CreateUserWithEmailAndPasswordAsync(email, passwordText.text)
       .ContinueWith((task) => {
         return HandleCreateUserAsync(task, newDisplayName: newDisplayName);
       }).Unwrap();
+      
   }
 
 //
@@ -215,6 +216,7 @@ public void CreateUserAsync() {
     public string userId;
      // System.Uri photo_url = user.PhotoUrl;
     public string profilepicuri;
+      public int totalscore = 0;
     //constructor
     public Player(string playername, string email, string userId,string profilepicuri) {
         this.playername = playername;
@@ -271,7 +273,7 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
   public void SigninAsync() {
     DebugLog(String.Format("Attempting to sign in as {0}...", email));
     // firebase sign in metthod for using email and password
-    auth.SignInWithEmailAndPasswordAsync(email, password)
+    auth.SignInWithEmailAndPasswordAsync(email, passwordText.text)
       .ContinueWith(HandleSigninResult);
   }
 //The response of the SignInWithEmailAndPasswordAsync method handled here

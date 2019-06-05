@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3915,6 +3915,7 @@ MonoBehaviour:
   winScore: {fileID: 1395392925}
   loseScore: {fileID: 1929537844}
   hitSound: {fileID: 8300000, guid: aae3d9c4ee35f354098e493c40955463, type: 3}
+  childSound: {fileID: 0}
   musicSource: {fileID: 595587287}
   audioSource: {fileID: 1375737375}
   unmuteBtn: {fileID: 0}
@@ -3933,12 +3934,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  startingTime: 80
+  startingTime: 75
   countDown: {fileID: 551150093}
   winScreen: {fileID: 591525149}
   lostScreen: {fileID: 989983785}
   levelName: Level02
-  levelPassScore: 70
+  levelPassScore: 40
   levelToUnlock: 3
   uiTimer: {fileID: 551150093}
   uiLevelPassScore: {fileID: 1945127190}

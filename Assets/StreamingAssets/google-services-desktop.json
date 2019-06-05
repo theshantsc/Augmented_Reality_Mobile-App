@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1022328572535-7q82blkmrovqvo8h0k4sv46b10cai03c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.softwareChasers.catchMe",
+            "certificate_hash": "120fd05745df28bf09a1a4cc434114e45c7214c0"
+          }
+        },
+        {
           "client_id": "1022328572535-s5l2kfolijskdr8ddekc5ppuedpgf71r.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

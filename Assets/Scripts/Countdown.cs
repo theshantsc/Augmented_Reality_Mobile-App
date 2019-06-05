@@ -84,13 +84,35 @@ public class Countdown : MonoBehaviour {
                    playerReadRef=FirebaseDatabase.DefaultInstance.GetReference("players");
                   //  Debug.Log(string.Format("playerReadRef {0}...", playerReadRef));
 
-                     playerReadRef.Child(loggedUser.UserId).Child("test").SetValueAsync(4);
+                     //playerReadRef.Child(loggedUser.UserId).Child("test").SetValueAsync(4);
 
                     if(levelName.Trim().Equals("Level01")){
                     logUserCurrentAchiveLevel =2;
                      Debug.Log("playerReadRef level01 value save{0}...");
                    
                     playerReadRef.Child(loggedUser.UserId).Child("score").Child("level1").SetValueAsync(score);
+
+                    playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").GetValueAsync().ContinueWith(task => {
+                    if (task.IsFaulted) {
+                        // Handle the error...
+                         Debug.Log(" start level  Handle the error task.IsFaulted");
+                    }
+                    else if (task.IsCompleted) {
+                      Debug.Log("Task Completed start level  :");
+                      DataSnapshot snapshot = task.Result;
+                         
+                      Debug.Log ("save total score level  2" +snapshot.Value);
+                      int dbscore=int.Parse(snapshot.Value.ToString());
+                      Debug.Log (" save total dbscore" +dbscore);
+                      int total=dbscore+score;
+
+                    playerReadRef.Child(loggedUser.UserId).Child("totalscore").SetValueAsync(total);
+      
+                    }else {
+                         Debug.Log("Else condtion");
+                    }
+                 });
+
                     }
                     else if(levelName.Trim().Equals("Level02"))
                     {
@@ -98,6 +120,28 @@ public class Countdown : MonoBehaviour {
                     logUserCurrentAchiveLevel =3;
                     playerReadRef.Child(loggedUser.UserId).Child("achievedlevel").SetValueAsync(3);
                     playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").SetValueAsync(score);
+
+                    playerReadRef.Child(loggedUser.UserId).Child("score").Child("level1").GetValueAsync().ContinueWith(task => {
+                    if (task.IsFaulted) {
+                        // Handle the error...
+                         Debug.Log(" start level  Handle the error task.IsFaulted");
+                    }
+                    else if (task.IsCompleted) {
+                      Debug.Log("Task Completed start level  :");
+                      DataSnapshot snapshot = task.Result;
+                         
+                      Debug.Log ("save total score level  1" +snapshot.Value);
+                      int dbscore=int.Parse(snapshot.Value.ToString());
+                      Debug.Log (" save total dbscore" +dbscore);
+                      int total=dbscore+score;
+
+                    playerReadRef.Child(loggedUser.UserId).Child("totalscore").SetValueAsync(total);
+      
+                    }else {
+                         Debug.Log("Else condtion");
+                    }
+                 });
+
                     }else {
                         Debug.Log("unexpeteted level");
                     }
@@ -123,11 +167,56 @@ public class Countdown : MonoBehaviour {
                      Debug.Log("playerReadRef level01 lost value save...");
                    
                     playerReadRef.Child(loggedUser.UserId).Child("score").Child("level1").SetValueAsync(score);
+
+                    
+                    playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").GetValueAsync().ContinueWith(task => {
+                    if (task.IsFaulted) {
+                        // Handle the error...
+                         Debug.Log(" start level  Handle the error task.IsFaulted");
+                    }
+                    else if (task.IsCompleted) {
+                      Debug.Log("Task Completed start level  :");
+                      DataSnapshot snapshot = task.Result;
+                         
+                      Debug.Log ("save total score level  2" +snapshot.Value);
+                      int dbscore=int.Parse(snapshot.Value.ToString());
+                      Debug.Log ("save total dbscore " +dbscore);
+                      int total=dbscore+score;
+
+                    playerReadRef.Child(loggedUser.UserId).Child("totalscore").SetValueAsync(total);
+      
+                    }else {
+                         Debug.Log("Else condtion");
+                    }
+                 });
+
                     }
                     else if(levelName.Trim().Equals("Level02"))
                     {
                     Debug.Log("playerReadRef level02 lost value save{0}...");
                     playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").SetValueAsync(score);
+
+                    playerReadRef.Child(loggedUser.UserId).Child("score").Child("level1").GetValueAsync().ContinueWith(task => {
+                    if (task.IsFaulted) {
+                        // Handle the error...
+                         Debug.Log(" start level  Handle the error task.IsFaulted");
+                    }
+                    else if (task.IsCompleted) {
+                      Debug.Log("Task Completed start level  :");
+                      DataSnapshot snapshot = task.Result;
+                         
+                      Debug.Log ("save total score level  1" +snapshot.Value);
+                      int dbscore=int.Parse(snapshot.Value.ToString());
+                      Debug.Log (" save total dbscore" +dbscore);
+                      int total=dbscore+score;
+
+                    playerReadRef.Child(loggedUser.UserId).Child("totalscore").SetValueAsync(total);
+      
+                    }else {
+                         Debug.Log("Else condtion");
+                    }
+                 });
+
                     }else {
                         Debug.Log("unexpeteted level");
                     }
