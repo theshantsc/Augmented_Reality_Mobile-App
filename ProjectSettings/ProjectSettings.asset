@@ -244,8 +244,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Hiruna/Documents/GitHub/Augmented_Reality_Mobile-App/CatchMe.keystore
-  AndroidKeyaliasName: catchme
+  AndroidKeystoreName: C:/Users/debug.keystore
+  AndroidKeyaliasName: androiddebugkey
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
@@ -762,9 +762,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: e179df87-c662-4502-825d-a180782a729a
-  projectName: CatchMe
-  organizationId: hirunapallage
+  cloudProjectId: e51551d6-7288-41c6-b77d-388773e4444f
+  projectName: CatchMe (1)
+  organizationId: mdksankalpa
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
