@@ -11,6 +11,7 @@ public class DestroyObjects : MonoBehaviour {
     public GameObject winScore;
     public GameObject loseScore;
     public AudioClip hitSound;
+    public AudioClip childSound;
     public AudioSource musicSource;
     public AudioSource audioSource;
     public GameObject unmuteBtn;
@@ -45,20 +46,30 @@ public class DestroyObjects : MonoBehaviour {
 
                     if (bc != null)
                     {
-                        musicSource.clip = hitSound;
-                        musicSource.PlayOneShot(hitSound);
+                        if (levelName == "InfoLevel")
+                        {
+                            musicSource.clip = childSound;
+                            musicSource.PlayOneShot(childSound);
+                        }
+                        else
+                        {
+                            musicSource.clip = hitSound;
+                            musicSource.PlayOneShot(hitSound);
 
-                        Destroy(bc.gameObject);
-                        Instantiate(deathEffect, bc.gameObject.transform.position, Quaternion.identity);
-                        enemyKillCount += 1;
+                            Destroy(bc.gameObject);
+                            Instantiate(deathEffect, bc.gameObject.transform.position, Quaternion.identity);
+                            enemyKillCount += 1;
 
-                        PlayerPrefs.SetInt(levelName, enemyKillCount);
+                            PlayerPrefs.SetInt(levelName, enemyKillCount);
 
-                        int totalScore = PlayerPrefs.GetInt("Level01") + PlayerPrefs.GetInt("Level02");
+                            int totalScore = PlayerPrefs.GetInt("Level01") + PlayerPrefs.GetInt("Level02");
 
-                        Score.GetComponent<UnityEngine.UI.Text>().text = enemyKillCount.ToString();
-                        winScore.GetComponent<UnityEngine.UI.Text>().text = totalScore.ToString();
-                        loseScore.GetComponent<UnityEngine.UI.Text>().text = totalScore.ToString();
+                            Score.GetComponent<UnityEngine.UI.Text>().text = enemyKillCount.ToString();
+                            winScore.GetComponent<UnityEngine.UI.Text>().text = totalScore.ToString();
+                            loseScore.GetComponent<UnityEngine.UI.Text>().text = totalScore.ToString();
+
+
+                        }
                     }
                 }
             }

@@ -458,12 +458,12 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.92
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -744,15 +744,15 @@ RectTransform:
   m_GameObject: {fileID: 656223399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0078179, y: 0.6270083, z: 0.6270083}
+  m_LocalScale: {x: 0.96458644, y: 0.6001121, z: 0.6001121}
   m_Children: []
   m_Father: {fileID: 1073789893}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -92, y: -130}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -95.5, y: -130}
+  m_SizeDelta: {x: 55.38, y: 70.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &656223401
 MonoBehaviour:
@@ -825,7 +825,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4ca7e2c327c05304aba87ae18e0f9c72, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c7b9a93f5e5637429aa9b3ccc542067, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1859,6 +1859,7 @@ GameObject:
   - component: {fileID: 1375737370}
   - component: {fileID: 1375737377}
   - component: {fileID: 1375737375}
+  - component: {fileID: 1375737373}
   - component: {fileID: 1375737376}
   m_Layer: 0
   m_Name: AR Camera
@@ -1952,6 +1953,19 @@ Transform:
   m_Father: {fileID: 773190231}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1375737373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1375737368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed31ce02d483cce43b53b1769b4100a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSource: {fileID: 392308028}
+  childSound: {fileID: 8300000, guid: c750be4395dbcdf4691bd4db29cad59f, type: 3}
 --- !u!82 &1375737375
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1963,7 +1977,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c677581a7c85fa64d895583a2daa89d1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.29
   m_Pitch: 1
   Loop: 1
   Mute: 0
