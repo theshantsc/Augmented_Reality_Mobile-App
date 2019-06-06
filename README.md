@@ -1,6 +1,7 @@
-# Augmented_Reality_Mobile-App
+#Software Chasers -CatchMe - AR Game for learn about Animals
+
 The aim is to demonstrate how AR core can be used to develop simple mobile game.
 
-Basic Guilde About using Git can be find in the file "Git - First Commit to Master Branch.docx" .
+pplication is developed by group Software Chasers  for address the group project requirements or S119 PRT451 PRINCIPLES OF SOFTWARE SYSTEMS   for  Masters in Information Technology, Charles Darwin University . (Semester 01 2019)
 
-Select the file from the above list and then download it.
+Copyrights @ Charles Darwin University 2019
