@@ -94,6 +94,13 @@ public class StartLevel : MonoBehaviour
     }
 
 
+    public void OpenHelp()
+    {
+
+     Application.OpenURL("https://sites.google.com/view/softwarechasers-catchme/home/help");
+          Debug.Log("is this working site help");
+    }
+
     public void QuitApplication()
     {
         Application.Quit();
