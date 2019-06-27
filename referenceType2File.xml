@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTypeDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDate>
+    <guid>dae2ecee8a704dd59797e26554ff8606</guid>
+    <fileName>Assets/Plugins/GitHub/Editor/ExtensionLoader.cs</fileName>
+    <timeStamp>2019-05-09T06:21:25.0353935+09:30</timeStamp>
+    <typeFullName>
+      <string>GitHub.Unity.ExtensionLoader</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>555cd6f54c03341b1970d950df1a5ee5</guid>
+    <fileName>Assets/Plugins/GitHub/Editor/UnityAPIWrapper.cs</fileName>
+    <timeStamp>2019-05-09T06:21:25.0783671+09:30</timeStamp>
+    <typeFullName>
+      <string>GitHub.Unity.UnityAPIWrapper</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>842f43ac94b4b4f72ac0898650ddcc44</guid>
+    <fileName>Assets/Cleaner/Editor/AssetCollector.cs</fileName>
+    <timeStamp>2015-12-10T04:21:26+09:30</timeStamp>
+    <typeFullName>
+      <string>AssetClean.AssetCollector</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>805140a4856714e288ea84985d3023df</guid>
+    <fileName>Assets/Cleaner/Editor/AssetReferenceCollection.cs</fileName>
+    <timeStamp>2015-12-10T04:21:26+09:30</timeStamp>
+    <typeFullName>
+      <string>AssetReferenceCollection</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>202c278a17939b24c8b79c0ee1f94d8f</guid>
+    <fileName>Assets/Cleaner/Editor/ClassReferenceCollection.cs</fileName>
+    <timeStamp>2015-12-10T04:21:26+09:30</timeStamp>
+    <typeFullName>
+      <string>AssetClean.ClassReferenceCollection</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>0d05386265df34bac8d0b6df44aa494c</guid>
+    <fileName>Assets/Cleaner/Editor/CollectionData.cs</fileName>
+    <timeStamp>2015-12-10T04:21:26+09:30</timeStamp>
+    <typeFullName>
+      <string>CollectionData</string>
+      <string>TypeDate</string>
+      <string>IReferenceCollection</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>74eec3bfba0594259ac2843353c082a3</guid>
+    <fileName>Assets/Cleaner/Editor/FindUnusedAssetsWindow.cs</fileName>
+    <timeStamp>2015-12-10T04:21:26+09:30</timeStamp>
+    <typeFullName>
+      <string>AssetClean.FindUnusedAssetsWindow</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>2c4f01a79a77a45a9a84004cc2b78098</guid>
+    <fileName>Assets/Cleaner/Editor/ShaderReferenceCollection.cs</fileName>
+    <timeStamp>2015-12-10T04:21:26+09:30</timeStamp>
+    <typeFullName>
+      <string>AssetClean.ShaderReferenceCollection</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>a6e81945d427d7d4489d2fdbbf23d76c</guid>
+    <fileName>Assets/Demo/Scripts/CollectionDemo.cs</fileName>
+    <timeStamp>2019-05-09T06:21:24.5902918+09:30</timeStamp>
+    <typeFullName>
+      <string>CollectionDemo</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>ad3b09fb652fb4ff0a68d1966f13160e</guid>
+    <fileName>Assets/GoogleSignIn/Future.cs</fileName>
+    <timeStamp>2019-05-29T12:46:14.1053215+09:30</timeStamp>
+    <typeFullName>
+      <string>Google.FutureAPIImpl`1</string>
+      <string>Google.Future`1</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>138b984208e394be797ce8905a44fd54</guid>
+    <fileName>Assets/GoogleSignIn/GoogleSignIn.cs</fileName>
+    <timeStamp>2019-05-29T12:46:14.1133179+09:30</timeStamp>
+    <typeFullName>
+      <string>Google.GoogleSignIn</string>
+      <string>Google.GoogleSignIn+SignInException</string>
+      <string>Google.ISignInImpl</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>0c3999c0f68f04ae08f04fb3bf2a2050</guid>
+    <fileName>Assets/GoogleSignIn/GoogleSignInConfiguration.cs</fileName>
+    <timeStamp>2019-05-29T12:46:14.1612878+09:30</timeStamp>
+    <typeFullName>
+      <string>Google.GoogleSignInConfiguration</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>077933fcaedac412d9762bf3e0a3be68</guid>
+    <fileName>Assets/GoogleSignIn/GoogleSignInStatusCode.cs</fileName>
+    <timeStamp>2019-05-29T12:46:14.1692835+09:30</timeStamp>
+    <typeFullName>
+      <string>Google.GoogleSignInStatusCode</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>c56b92217d0144af5907627d1235e0a5</guid>
+    <fileName>Assets/GoogleSignIn/GoogleSignInUser.cs</fileName>
+    <timeStamp>2019-05-29T12:46:14.1762798+09:30</timeStamp>
+    <typeFullName>
+      <string>Google.GoogleSignInUser</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>fe250cda690a44cb08f8f7d26c9723b4</guid>
+    <fileName>Assets/GoogleSignIn/Impl/BaseObject.cs</fileName>
+    <timeStamp>2019-05-29T12:46:14.1872715+09:30</timeStamp>
+    <typeFullName>
+      <string>Google.Impl.BaseObject</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>9ae1f008f9f994b9c96c1a14067d7b48</guid>
+    <fileName>Assets/GoogleSignIn/Impl/GoogleSignInImpl.cs</fileName>
+    <timeStamp>2019-05-29T12:46:14.2072588+09:30</timeStamp>
+    <typeFullName>
+      <string>Google.Impl.GoogleSignInImpl</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>5f1aae79b1ca4432d9d8ec382c54bf46</guid>
+    <fileName>Assets/GoogleSignIn/Impl/NativeFuture.cs</fileName>
+    <timeStamp>2019-05-29T12:46:14.214255+09:30</timeStamp>
+    <typeFullName>
+      <string>Google.Impl.NativeFuture</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>ad98e5b48888e44eb81dd5884d3a1754</guid>
+    <fileName>Assets/GoogleSignIn/Impl/SignInHelperObject.cs</fileName>
+    <timeStamp>2019-05-29T12:46:14.2222504+09:30</timeStamp>
+    <typeFullName>
+      <string>Google.Impl.SignInHelperObject</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>f39af9a6855e45a469d3c5876d733f33</guid>
+    <fileName>Assets/GUI Animator/GUI Animator FREE/Demo/Scripts/GA_FREE_Demo00.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.1328745+09:30</timeStamp>
+    <typeFullName>
+      <string>GA_FREE_Demo00</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>f740ac9d8bc4a114da454283e677d4b0</guid>
+    <fileName>Assets/GUI Animator/GUI Animator FREE/Demo/Scripts/GA_FREE_Demo01.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.1368718+09:30</timeStamp>
+    <typeFullName>
+      <string>GA_FREE_Demo01</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>c68810bebe5dec0428428e485031f64e</guid>
+    <fileName>Assets/GUI Animator/GUI Animator FREE/Demo/Scripts/GA_FREE_Demo02.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.1428674+09:30</timeStamp>
+    <typeFullName>
+      <string>GA_FREE_Demo02</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>b12567fee6d90b646be679c417a7d25f</guid>
+    <fileName>Assets/GUI Animator/GUI Animator FREE/Demo/Scripts/GA_FREE_Demo03.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.1478641+09:30</timeStamp>
+    <typeFullName>
+      <string>GA_FREE_Demo03</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>2fbc34f3a6b4b4b48a0106285e33fcf4</guid>
+    <fileName>Assets/GUI Animator/GUI Animator FREE/Demo/Scripts/GA_FREE_Demo04.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.1518619+09:30</timeStamp>
+    <typeFullName>
+      <string>GA_FREE_Demo04</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>19420f22e1d282b47b72b2af205c0ef7</guid>
+    <fileName>Assets/GUI Animator/GUI Animator FREE/Demo/Scripts/GA_FREE_Demo05.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.1548615+09:30</timeStamp>
+    <typeFullName>
+      <string>GA_FREE_Demo05</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>8f07229ffffee13438c418ed2aa8e0db</guid>
+    <fileName>Assets/GUI Animator/GUI Animator FREE/Demo/Scripts/GA_FREE_Demo06.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.1578586+09:30</timeStamp>
+    <typeFullName>
+      <string>GA_FREE_Demo06</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>3e066e50156c9e848bec901399f2dde3</guid>
+    <fileName>Assets/GUI Animator/GUI Animator FREE/Demo/Scripts/GA_FREE_Demo07.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.1608573+09:30</timeStamp>
+    <typeFullName>
+      <string>GA_FREE_Demo07</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>ca0016ce703fe784ca4c017e35b58aad</guid>
+    <fileName>Assets/GUI Animator/GUI Animator FREE/Demo/Scripts/GA_FREE_Demo08.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.1658531+09:30</timeStamp>
+    <typeFullName>
+      <string>GA_FREE_Demo08</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>6b1668be4e8f5a144971410a031b87ad</guid>
+    <fileName>Assets/GUI Animator/GUI Animator FREE/Demo/Scripts/GA_FREE_DemoPlaySound.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.1708503+09:30</timeStamp>
+    <typeFullName>
+      <string>GA_FREE_DemoPlaySound</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>faec77c91dd7a064ba5aff1919cfd019</guid>
+    <fileName>Assets/GUI Animator/GUI Animator FREE/Demo/Scripts/GA_FREE_OpenOtherScene.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.1758474+09:30</timeStamp>
+    <typeFullName>
+      <string>GA_FREE_OpenOtherScene</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>12c78100016c0b646812ef39caface53</guid>
+    <fileName>Assets/GUI Animator/GUI Animator FREE/Demo Basic/Scripts/GUIAnimatorFREEDemo.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.0659158+09:30</timeStamp>
+    <typeFullName>
+      <string>GUIAnimatorFREEDemo</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>21266aa9494ac334caa3e80c7f08b844</guid>
+    <fileName>Assets/Scripts/AnimalInfo.cs</fileName>
+    <timeStamp>2019-06-03T07:41:53.9155671+09:30</timeStamp>
+    <typeFullName>
+      <string>AnimalInfo</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>bb2ea99fd876cff4ca372098fc59de98</guid>
+    <fileName>Assets/Scripts/AnimationControllerGUI.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.3357489+09:30</timeStamp>
+    <typeFullName>
+      <string>AnimationControllerGUI</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>36389226f49683947a09a37782361c75</guid>
+    <fileName>Assets/Scripts/Countdown.cs</fileName>
+    <timeStamp>2019-06-14T19:37:07.1411564+09:30</timeStamp>
+    <typeFullName>
+      <string>Countdown</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>4af0c36638f12c44e8b59258d190b648</guid>
+    <fileName>Assets/Scripts/DatabaseHandler.cs</fileName>
+    <timeStamp>2019-05-30T14:46:18.8107513+09:30</timeStamp>
+    <typeFullName>
+      <string>DatabaseHandler</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>372540d3e920b6740bb40f9db3903550</guid>
+    <fileName>Assets/Scripts/DestroyObjects.cs</fileName>
+    <timeStamp>2019-06-05T19:51:42.404699+09:30</timeStamp>
+    <typeFullName>
+      <string>DestroyObjects</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>3fb49370055401140a3eb40e93c8acb1</guid>
+    <fileName>Assets/Scripts/GetDataScoreBoard.cs</fileName>
+    <timeStamp>2019-06-14T00:36:46.7736813+09:30</timeStamp>
+    <typeFullName>
+      <string>HighScore</string>
+      <string>HighScore2</string>
+      <string>GetDataScoreBoard</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>eb1c2a1ab0ff17d449ba9172731a9730</guid>
+    <fileName>Assets/Scripts/LevelSelector.cs</fileName>
+    <timeStamp>2019-05-25T00:52:10.1719502+09:30</timeStamp>
+    <typeFullName>
+      <string>LevelSelector</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>edccecf8a320a3940b2c9c1fd659ea26</guid>
+    <fileName>Assets/Scripts/LoginHandler.cs</fileName>
+    <timeStamp>2019-06-14T19:05:49.498251+09:30</timeStamp>
+    <typeFullName>
+      <string>LoginHandler</string>
+      <string>LoginHandler+Player</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>d76c9a48bc0b92d45af266c5d4246ba5</guid>
+    <fileName>Assets/Scripts/LookAtObject.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.3457477+09:30</timeStamp>
+    <typeFullName>
+      <string>LookAtObject</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>f8486a610b85ab248a0b999687859a55</guid>
+    <fileName>Assets/Scripts/Place.cs</fileName>
+    <timeStamp>2019-06-03T07:41:54.0235393+09:30</timeStamp>
+    <typeFullName>
+      <string>Place</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>899ead650aa520947a7ceb1dd11cf75f</guid>
+    <fileName>Assets/Scripts/PlaceARObjects.cs</fileName>
+    <timeStamp>2019-05-23T12:33:48.3847182+09:30</timeStamp>
+    <typeFullName>
+      <string>PlaceARObjects</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>ed31ce02d483cce43b53b1769b4100a8</guid>
+    <fileName>Assets/Scripts/PlayAnimalSound.cs</fileName>
+    <timeStamp>2019-06-05T19:51:42.415692+09:30</timeStamp>
+    <typeFullName>
+      <string>PlayAnimalSound</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>53ac4fed0a3186144bd589053ce58bcf</guid>
+    <fileName>Assets/Scripts/ResumeLevel.cs</fileName>
+    <timeStamp>2019-05-29T12:46:14.9353511+09:30</timeStamp>
+    <typeFullName>
+      <string>ResumeLevel</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>0d3d234665bbc844ebbd8e0ff7e2d9a1</guid>
+    <fileName>Assets/Scripts/ScoreBoard.cs</fileName>
+    <timeStamp>2019-06-05T12:27:32.0381834+09:30</timeStamp>
+    <typeFullName>
+      <string>ScoreBoard</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>934120b12e3533b41b27b9a12ae835da</guid>
+    <fileName>Assets/Scripts/ScoreSaveDemo.cs</fileName>
+    <timeStamp>2019-05-29T22:04:18.2284488+09:30</timeStamp>
+    <typeFullName>
+      <string>ScoreSaveDemo</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>d66080d2ac743c94bb2163b10814b1d2</guid>
+    <fileName>Assets/Scripts/SigninSampleScript.cs</fileName>
+    <timeStamp>2019-05-29T12:46:14.9403463+09:30</timeStamp>
+    <typeFullName>
+      <string>SigninSampleScript</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>6a2b531959b503a4e88b125069734298</guid>
+    <fileName>Assets/Scripts/StartLevel.cs</fileName>
+    <timeStamp>2019-06-06T09:57:55.7816028+09:30</timeStamp>
+    <typeFullName>
+      <string>StartLevel</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>65124888280f1624d8270159662c81a4</guid>
+    <fileName>Assets/Scripts/TestMenu.cs</fileName>
+    <timeStamp>2019-05-18T20:13:03.0983709+09:30</timeStamp>
+    <typeFullName>
+      <string>TestMenu</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>ea7372603abe3c346a8ad79ff243b20f</guid>
+    <fileName>Assets/Scripts/UsernameAndPic.cs</fileName>
+    <timeStamp>2019-06-05T01:27:50.5138375+09:30</timeStamp>
+    <typeFullName>
+      <string>UsernameAndPic</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>9d432a5d3d68af34aa3aefa93fc296c1</guid>
+    <fileName>Assets/Unity-Logs-Viewer/Reporter/MultiKeyDictionary.cs</fileName>
+    <timeStamp>2019-05-29T12:46:15.1692057+09:30</timeStamp>
+    <typeFullName>
+      <string>MultiKeyDictionary`3</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>600c02144c4813244abd262cbcbe8825</guid>
+    <fileName>Assets/Unity-Logs-Viewer/Reporter/Reporter.cs</fileName>
+    <timeStamp>2019-05-29T12:46:15.1722037+09:30</timeStamp>
+    <typeFullName>
+      <string>Images</string>
+      <string>Reporter</string>
+      <string>Reporter+Log</string>
+      <string>Reporter+Sample</string>
+      <string>Reporter+_LogType</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>8c866050b2c752d488112993fd0ddfce</guid>
+    <fileName>Assets/Unity-Logs-Viewer/Reporter/ReporterGUI.cs</fileName>
+    <timeStamp>2019-05-29T12:46:15.1752046+09:30</timeStamp>
+    <typeFullName>
+      <string>ReporterGUI</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>6767a180de870304caa2013b2772dd62</guid>
+    <fileName>Assets/Unity-Logs-Viewer/Reporter/ReporterMessageReceiver.cs</fileName>
+    <timeStamp>2019-05-29T12:46:15.1781997+09:30</timeStamp>
+    <typeFullName>
+      <string>ReporterMessageReceiver</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>639e2d9db58377f4997f7678b50e7e7a</guid>
+    <fileName>Assets/Unity-Logs-Viewer/Reporter/Editor/ReporterEditor.cs</fileName>
+    <timeStamp>2019-05-29T12:46:14.9703286+09:30</timeStamp>
+    <typeFullName>
+      <string>ReporterEditor</string>
+      <string>ReporterModificationProcessor</string>
+      <string>ReporterModificationProcessor+BuildInfo</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>fa24ce3e8b4a445479906686d9756911</guid>
+    <fileName>Assets/Unity-Logs-Viewer/Reporter/Test/Rotate.cs</fileName>
+    <timeStamp>2019-05-29T12:46:15.1861944+09:30</timeStamp>
+    <typeFullName>
+      <string>Rotate</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+  <TypeDate>
+    <guid>cac68c003767bec459aa60dc282ff67d</guid>
+    <fileName>Assets/Unity-Logs-Viewer/Reporter/Test/TestReporter.cs</fileName>
+    <timeStamp>2019-05-29T12:46:15.1891929+09:30</timeStamp>
+    <typeFullName>
+      <string>TestReporter</string>
+    </typeFullName>
+    <assemblly>Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</assemblly>
+  </TypeDate>
+</ArrayOfTypeDate>

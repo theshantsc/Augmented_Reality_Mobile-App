@@ -216,7 +216,7 @@ public void CreateUserAsync() {
     public string userId;
      // System.Uri photo_url = user.PhotoUrl;
     public string profilepicuri;
-      public int totalscore = 0;
+    public int totalscore = 0;
     //constructor
     public Player(string playername, string email, string userId,string profilepicuri) {
         this.playername = playername;
@@ -230,7 +230,8 @@ public void CreateUserAsync() {
 private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
 
   string userId =userInfo.UserId;
-  string playername =userInfo.DisplayName;
+  //tempory workaround
+  string playername =userNameText.text;
   string email=userInfo.Email;
   // set defult image for guest
   string photo_url= WWW.UnEscapeURL("https://firebasestorage.googleapis.com/v0/b/softchasers-catch-me.appspot.com/o/avata.png?alt=media&token=33f08ed1-3154-49f8-892d-dfb1da8ccdce");
@@ -297,7 +298,7 @@ private IEnumerator writePlayer(Firebase.Auth.IUserInfo userInfo) {
         Firebase.Auth.FirebaseUser newUser = authTask.Result;
         Debug.LogFormat("Firebase user login successfully: {0} ({1})",newUser.DisplayName, newUser.UserId);
         //waiting method called for save user logged time
-        StartCoroutine(updateLastLoginTime(newUser.UserId));
+        StartCoroutine(updateLastLoginTime(newUser.UserId));             
         // get username and profile pic usrl from database
          StartCoroutine(GetIntailDbValues(newUser.UserId));
       //  move to menu
@@ -420,13 +421,13 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task)
             AggregateException ex = task.Exception;
             if (ex != null)
             {
-               AddToInformation("\nError code = ");
+               AddToInformation("Firebase Sign in Error ! ");
                // if (ex.InnerExceptions[0] is FirebaseException inner && (inner.ErrorCode != 0))
                //     AddToInformation("\nError code = " + inner.ErrorCode + " Message = " + inner.Message);
             }
             else
             {
-                AddToInformation("Sign In Successful Google.");
+                AddToInformation("Sign In Successful Using Google Account!.");
 
                 // take the user detail from the response Result
                 Firebase.Auth.FirebaseUser newUser = task.Result;
@@ -438,15 +439,18 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task)
                 playerReadRef.Child(newUser.UserId).GetValueAsync().ContinueWith(task2 => {
               if (task2.IsFaulted) {
                         // user mostly not exist , rare chance of error
-                          AddToInformation("Most porpably  User Not exist !");
+                         // AddToInformation("Most porpably  User Not exist !");
+                         Debug.Log("Most porpably  User Not exist !");
                           //So need to move user to screen which need to collect username and save to db
                             SceneManager.LoadSceneAsync("GoogleAuthUserNameScene");
                     }
                     else if (task2.IsCompleted) {
-                         AddToInformation("User Exist checkTask Completed get User Detail ");
+                       //  AddToInformation("User Exist checkTask Completed get User Detail ");
+                          Debug.Log("User Exist checkTask Completed get User Detail !");
                        DataSnapshot snapshot = task2.Result;
                       if(snapshot.Value!=null){
-                          AddToInformation("User logged with current credintals: " + newUser.UserId);
+                          //AddToInformation("User logged with current credintals: " + newUser.UserId);
+                          Debug.Log("User logged with current credintals: " + newUser.UserId);
                           //call the function which wait until save the logged time
                            StartCoroutine(updateLastLoginTime(newUser.UserId));
                            //get the user name and profile picture for menu scene 
@@ -457,13 +461,13 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task)
                       }
                       else {
                         //if snapshot is null user not exist , not worked for unity
-                         AddToInformation("The User is new User = " + newUser.UserId);
+                       //  AddToInformation("The User is new User = " + newUser.UserId);
+                            Debug.Log("The User is new User = " + newUser.UserId);
                          SceneManager.LoadSceneAsync("GoogleAuthUserNameScene");
                            
                       }  
                     }else {
-                        AddToInformation("Else condtion ");
-                         Debug.Log("Else condtion");
+                          Debug.Log("Else condtion");
                     }
           });   
             }
@@ -481,7 +485,7 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task)
     string photo_url = loggedUser.PhotoUrl.ToString();
 
     //message.text = "writePlayer";
-     AddToInformation("SaveNewUserGoogleAuthr User Id '{0}': = " + loggedUser.UserId);
+    // AddToInformation("SaveNewUserGoogleAuthr User Id '{0}': = " + loggedUser.UserId);
 
     Player player = new Player(playername, email,userId,photo_url);
     string json = JsonUtility.ToJson(player);
@@ -504,7 +508,7 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task)
     Debug.Log(json);
       playerDbRef = FirebaseDatabase.DefaultInstance.RootReference;
      DebugLog(String.Format("playerDbRef {0}...", playerDbRef));
-     AddToInformation("SaveNewUserGoogleAuth End ");
+    // AddToInformation("SaveNewUserGoogleAuth End ");
     playerDbRef.Child("players").Child(userId).SetRawJsonValueAsync(json);
 
     SceneManager.LoadSceneAsync("Menu");
@@ -572,9 +576,8 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task)
         }
 
          if(scene.name.Contains("GoogleAuthUserNameScene")){
-            AddToInformation("Firebase Google user  New User not found in  DB = " + loggedUser.UserId);
-            AddToInformation("Firebase Google user  New User not found in  DB = " + loggedUser.Email);
-         }
+             Debug.Log("Firebase Google user  New User not found in  DB = " + loggedUser.UserId);
+             }
 
 
              if(scene.name.Contains("GoogleAuthScene")){

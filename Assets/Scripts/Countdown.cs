@@ -91,6 +91,7 @@ public class Countdown : MonoBehaviour {
                      Debug.Log("playerReadRef level01 value save{0}...");
                    
                     playerReadRef.Child(loggedUser.UserId).Child("score").Child("level1").SetValueAsync(score);
+                    playerReadRef.Child(loggedUser.UserId).Child("totalscore").SetValueAsync(score);
 
                     playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").GetValueAsync().ContinueWith(task => {
                     if (task.IsFaulted) {
@@ -167,6 +168,7 @@ public class Countdown : MonoBehaviour {
                      Debug.Log("playerReadRef level01 lost value save...");
                    
                     playerReadRef.Child(loggedUser.UserId).Child("score").Child("level1").SetValueAsync(score);
+                    playerReadRef.Child(loggedUser.UserId).Child("totalscore").SetValueAsync(score);
 
                     
                     playerReadRef.Child(loggedUser.UserId).Child("score").Child("level2").GetValueAsync().ContinueWith(task => {

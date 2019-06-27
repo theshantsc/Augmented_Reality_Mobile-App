@@ -132,13 +132,13 @@ public class GetDataScoreBoard : MonoBehaviour {
                                                        Debug.LogFormat("Key parent = {0}", childSnapshot.Key); 
                                                        IDictionary dicttop = (IDictionary)childSnapshot.Value;
                                                           name = dicttop["playername"].ToString();
-                                                          totalScore = int.Parse( dicttop["totalscore"].ToString());
+                                                      totalScore = int.Parse( dicttop["totalscore"].ToString());
                                                    // IDictionary scoreslist =(IDictionary)dicttop["score"];
                                                      //    level1Score = int.Parse(scoreslist["level1"].ToString());
                                                                      // level2Score = int.Parse(scoreslist["level2"].ToString());
 
                                                                      // totalScore=level1Score+level1Score;
-                                                                      Debug.LogFormat("totalScore = {0}", totalScore.ToString());
+                                                     Debug.LogFormat("totalScore = {0}", totalScore.ToString());
                                                                    
 
                                                         /*  foreach(var scores in scoreslist)         //levels
@@ -185,10 +185,10 @@ public class GetDataScoreBoard : MonoBehaviour {
         private IEnumerator showScores (){
           Debug.Log("showScores");
          for (int i=(highScores2.Count-1) ; i >= 0 ; i--){
-            Debug.Log("showScores"+i);
+            Debug.Log("showScores set values"+i);
              GameObject scoreObj = Instantiate(scorePrefab);
              HighScore2 tmpScore = highScores2[i];
-             scoreObj.GetComponent<ScoreBoard>().SetScore("#" + (i + 1).ToString(), tmpScore.Name, tmpScore.Score.ToString());
+             scoreObj.GetComponent<ScoreBoard>().SetScore("#" + (highScores2.Count -i).ToString(), tmpScore.Name, tmpScore.Score.ToString());
                scoreObj.transform.SetParent(scoreParent);
                scoreObj.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
          }
